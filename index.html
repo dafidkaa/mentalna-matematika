@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="MentalMath">
+    <title>Mentalna Matematika - Učenje kroz Igru</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Skip link for keyboard accessibility -->
+    <a href="#home-screen" class="skip-link">Preskoči na glavni sadržaj</a>
+    <div id="app">
+        <!-- Splash Screen -->
+        <div id="splash-screen" class="screen active" role="banner" aria-label="Učitavanje aplikacije Mentalna Matematika">
+            <div class="splash-bg">
+                <!-- Soft animated shapes -->
+                <div class="splash-shape" aria-hidden="true"></div>
+                <div class="splash-shape" aria-hidden="true"></div>
+                <div class="splash-shape" aria-hidden="true"></div>
+                <div class="splash-shape" aria-hidden="true"></div>
+                <!-- Floating math symbols -->
+                <span class="float-math" aria-hidden="true">7</span>
+                <span class="float-math" aria-hidden="true">+</span>
+                <span class="float-math" aria-hidden="true">3</span>
+                <span class="float-math" aria-hidden="true">=</span>
+                <span class="float-math" aria-hidden="true">10</span>
+            </div>
+            <div class="splash-content">
+                <div class="splash-logo-area" aria-hidden="true">
+                    <span class="splash-sparkle" aria-hidden="true">✨</span>
+                    <span class="splash-sparkle" aria-hidden="true">⭐</span>
+                    <span class="splash-sparkle" aria-hidden="true">🌟</span>
+                    <div class="splash-character" aria-hidden="true">🦁</div>
+                    <div class="splash-character-shadow" aria-hidden="true"></div>
+                </div>
+                <h1>Mentalna Matematika</h1>
+                <div class="splash-tagline">
+                    <span>🎯</span> Za djecu i roditelje
+                </div>
+                <div class="splash-loading">
+                    <div class="loading-dots">
+                        <div class="loading-dot"></div>
+                        <div class="loading-dot"></div>
+                        <div class="loading-dot"></div>
+                        <div class="loading-dot"></div>
+                    </div>
+                    <div class="loading-track">
+                        <div class="loading-bar"></div>
+                    </div>
+                </div>
+                <div class="splash-philosophy-card">
+                    <span class="quote-mark">„</span>
+                    <p>Prvo napravi lijep broj,<br>onda popravi.</p>
+                    <span class="quote-mark end">"</span>
+                </div>
+            </div>
+            <div class="splash-mascot left">🐵</div>
+            <div class="splash-mascot right">🦊</div>
+        </div>
+
+        <!-- Home Screen -->
+        <div id="home-screen" class="screen" role="main" aria-label="Početni zaslon">
+            <header class="app-header" role="banner">
+                <div class="header-logo">
+                    <span class="logo-icon" aria-hidden="true">🧮</span>
+                    <span class="logo-text">Mentalna Matematika</span>
+                </div>
+                <div class="header-stats" aria-label="Statistike">
+                    <div class="stat-badge" id="total-stars-badge" aria-label="Ukupno zvjezdica">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <span id="total-stars" aria-live="polite">0</span>
+                    </div>
+                    <div class="stat-badge" id="streak-badge" aria-label="Niz točnih odgovora">
+                        <i class="fas fa-fire" aria-hidden="true"></i>
+                        <span id="streak-count" aria-live="polite">0</span>
+                    </div>
+                    <div class="stat-badge" id="settings-badge" aria-label="Postavke" tabindex="0" onclick="app.openSettings()" style="cursor:pointer;">
+                        <i class="fas fa-cog" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </header>
+
+            <main class="home-main">
+                <div class="hero-section">
+                    <h2>Koji svijet želiš istražiti danas?</h2>
+                    <p class="hero-subtitle">Svaki svijet uči drugačiji način razmišljanja!</p>
+                </div>
+
+                <div class="daily-challenge-card" id="daily-challenge" role="region" aria-label="Dnevni izazov" tabindex="0">
+                    <div class="challenge-icon" aria-hidden="true">📅</div>
+                    <div class="challenge-info">
+                        <h3>Dnevni Izazov</h3>
+                        <p>Riješi 10 zadataka za posebnu nagradu!</p>
+                    </div>
+                    <button class="btn btn-challenge" onclick="app.startDailyChallenge()" aria-label="Započni dnevni izazov">
+                        <i class="fas fa-play" aria-hidden="true"></i> Igraj
+                    </button>
+                </div>
+
+                <div class="phases-grid" id="phases-grid">
+                    <!-- Phases will be rendered by JS -->
+                </div>
+            </main>
+
+            <footer class="app-footer">
+                <p>10-15 minuta dnevno • Bez forsiranja • Uvijek završi s pobjedom</p>
+            </footer>
+        </div>
+
+        <!-- Phase Detail Screen -->
+        <div id="phase-screen" class="screen" role="main" aria-label="Detalji faze">
+            <header class="app-header">
+                <button class="btn btn-back" onclick="app.goHome()">
+                    <i class="fas fa-arrow-left"></i> Natrag
+                </button>
+                <div class="header-title" id="phase-header-title">Svijet</div>
+            </header>
+
+            <main class="phase-main">
+                <div class="phase-hero" id="phase-hero">
+                    <div class="phase-icon" id="phase-icon">🌟</div>
+                    <h2 id="phase-title">Naslov</h2>
+                    <p id="phase-subtitle">Podnaslov</p>
+                </div>
+
+                <div class="phase-progress-section" role="region" aria-label="Napredak faze">
+                    <div class="progress-bar-container" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Postotak završenih zadataka" id="phase-progress-aria">
+                        <div class="progress-bar" id="phase-progress-bar"></div>
+                    </div>
+                    <p class="progress-text" id="phase-progress-text" aria-live="polite">0 / 50 zadataka riješeno</p>
+                </div>
+
+                <div class="phase-info-cards" role="region" aria-label="Informacije o fazi">
+                    <div class="info-card" tabindex="0">
+                        <div class="info-icon" aria-hidden="true">💡</div>
+                        <h4>Glavna ideja</h4>
+                        <p id="phase-idea">Ideja...</p>
+                    </div>
+                    <div class="info-card" tabindex="0">
+                        <div class="info-icon" aria-hidden="true">🗣️</div>
+                        <h4>Mentalna rečenica</h4>
+                        <p id="phase-mantra" class="mantra">Rečenica...</p>
+                    </div>
+                    <div class="info-card" tabindex="0">
+                        <div class="info-icon" aria-hidden="true">👨‍👩‍👧</div>
+                        <h4>Savjet za roditelje</h4>
+                        <p id="phase-parent-tip">Savjet...</p>
+                    </div>
+                </div>
+
+                <div class="game-modes" role="region" aria-label="Načini vježbanja">
+                    <h3>Načini vježbanja</h3>
+                    <div class="mode-cards mode-cards-5" role="group" aria-label="Odaberite način vježbanja">
+                        <button class="mode-card mode-card-learn" onclick="app.startLearn()" aria-label="Uči - Vizualni vodič">
+                            <div class="mode-icon" aria-hidden="true">🎓</div>
+                            <h4>Uči</h4>
+                            <p>Vizualni vodič</p>
+                        </button>
+                        <button class="mode-card" onclick="app.startQuiz('practice')" aria-label="Vježbaj - Uči bez pritiska">
+                            <div class="mode-icon" aria-hidden="true">📚</div>
+                            <h4>Vježbaj</h4>
+                            <p>Uči bez pritiska</p>
+                        </button>
+                        <button class="mode-card" onclick="app.startQuiz('quiz')" aria-label="Kviz - Zaradi zvjezdice">
+                            <div class="mode-icon" aria-hidden="true">⭐</div>
+                            <h4>Kviz</h4>
+                            <p>Zaradi zvjezdice</p>
+                        </button>
+                        <button class="mode-card" onclick="app.startQuiz('speed')" aria-label="Brzinski - 10 zadataka u 60 sekundi">
+                            <div class="mode-icon" aria-hidden="true">⚡</div>
+                            <h4>Brzinski</h4>
+                            <p>10 zadataka u 60 sekundi</p>
+                        </button>
+                        <button class="mode-card" onclick="app.startQuiz('steps')" aria-label="Korak po korak - Nauči metodu">
+                            <div class="mode-icon" aria-hidden="true">🪜</div>
+                            <h4>Korak po korak</h4>
+                            <p>Nauči metodu</p>
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Learn Screen -->
+        <div id="learn-screen" class="screen" role="main" aria-label="Zaslon za učenje">
+            <header class="app-header">
+                <button class="btn btn-back" onclick="app.quitLearn()">
+                    <i class="fas fa-arrow-left"></i> Natrag
+                </button>
+                <div class="header-title" id="learn-phase-title">Učenje</div>
+            </header>
+
+            <main class="learn-main">
+                <div class="learn-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Napredak učenja" id="learn-progress-bar-aria">
+                    <div class="learn-progress-fill" id="learn-progress-fill"></div>
+                </div>
+
+                <!-- Step progress dots -->
+                <div class="learn-progress-dots" id="learn-progress-dots" role="tablist" aria-label="Koraci učenja">
+                    <!-- Dots rendered by JS -->
+                </div>
+
+                <div class="learn-step-counter" aria-live="polite" aria-atomic="true">
+                    Korak <span id="learn-step-num">1</span> od <span id="learn-step-total">5</span>
+                </div>
+
+                <div class="learn-card" id="learn-card" role="region" aria-live="polite" aria-label="Sadržaj učenja">
+                    <!-- Dynamic learn content rendered here -->
+                </div>
+
+                <div class="learn-nav" role="group" aria-label="Navigacija učenja">
+                    <button class="btn btn-secondary" id="learn-btn-prev" onclick="app.prevLearnStep()" aria-label="Prijašnji korak">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i> Prijašnji
+                    </button>
+                    <button class="btn btn-primary" id="learn-btn-next" onclick="app.nextLearnStep()" aria-label="Sljedeći korak">
+                        Sljedeći <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn btn-success" id="learn-btn-finish" onclick="app.finishLearn()" aria-label="Završi učenje">
+                        Završi <i class="fas fa-check" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </main>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen" role="main" aria-label="Kviz zaslon">
+            <header class="app-header quiz-header">
+                <button class="btn btn-back" onclick="app.confirmQuit()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="quiz-header-info">
+                    <span class="quiz-phase-name" id="quiz-phase-name">Faza</span>
+                    <span class="quiz-mode-name" id="quiz-mode-name">Mod</span>
+                </div>
+                <div class="quiz-timer" id="quiz-timer" role="timer" aria-live="off" aria-label="Preostalo vremena">
+                    <i class="fas fa-clock" aria-hidden="true"></i>
+                    <span id="timer-value" aria-live="polite">--</span>
+                </div>
+            </header>
+
+            <main class="quiz-main">
+                <div class="quiz-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Napredak kviza" id="quiz-progress-bar">
+                    <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+                </div>
+
+                <div class="quiz-stats-bar">
+                    <span class="stat">Pitanje <span id="current-q">1</span> / <span id="total-q">10</span></span>
+                    <span class="stat correct-count"><i class="fas fa-check"></i> <span id="correct-count">0</span></span>
+                    <span class="stat streak-count"><i class="fas fa-fire"></i> <span id="streak-display">0</span></span>
+                </div>
+
+                <div class="question-card" id="question-card" role="region" aria-label="Pitanje">
+                    <div class="question-type-badge" id="question-type-badge" aria-label="Tip pitanja">Pitanje</div>
+                    <div class="question-content" id="question-content" role="text" aria-live="polite">
+                        <!-- Question rendered here -->
+                    </div>
+                    <div class="question-answer-area" id="question-answer-area" role="group" aria-label="Odgovori">
+                        <!-- Answer inputs rendered here -->
+                    </div>
+                </div>
+
+                <div class="hint-section" id="hint-section" role="region" aria-label="Pomoć">
+                    <button class="btn btn-hint" id="btn-hint" onclick="app.showHint()" aria-expanded="false" aria-controls="hint-content">
+                        <i class="fas fa-lightbulb" aria-hidden="true"></i> Trebaš pomoć?
+                    </button>
+                    <div class="hint-content" id="hint-content" role="region" aria-live="polite"></div>
+                </div>
+
+                <div class="feedback-area" id="feedback-area" role="status" aria-live="polite" aria-atomic="true">
+                    <div class="feedback-content" id="feedback-content"></div>
+                    <button class="btn btn-next" id="btn-next" onclick="app.nextQuestion()" aria-label="Sljedeće pitanje">
+                        Sljedeće <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <div class="quiz-actions" id="quiz-actions" role="group" aria-label="Akcije kviza">
+                    <button class="btn btn-primary btn-submit" id="btn-submit" onclick="app.submitAnswer()" aria-label="Provjeri odgovor">
+                        Provjeri odgovor
+                    </button>
+                </div>
+            </main>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen" role="main" aria-label="Rezultati">
+            <div class="results-content">
+                <div class="results-icon" id="results-icon">🏆</div>
+                <h2 id="results-title">Bravo!</h2>
+                <p class="results-message" id="results-message">Odlično si riješio/la zadatke!</p>
+
+                <div class="results-stats">
+                    <div class="result-stat">
+                        <div class="stat-circle correct">
+                            <span id="result-correct">0</span>
+                        </div>
+                        <label>Točnih</label>
+                    </div>
+                    <div class="result-stat">
+                        <div class="stat-circle total">
+                            <span id="result-total">0</span>
+                        </div>
+                        <label>Ukupno</label>
+                    </div>
+                    <div class="result-stat">
+                        <div class="stat-circle stars">
+                            <span id="result-stars">0</span>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <label>Zvjezdica</label>
+                    </div>
+                </div>
+
+                <div class="stars-display" id="stars-display">
+                    <!-- Stars rendered here -->
+                </div>
+
+                <div class="results-actions">
+                    <button class="btn btn-secondary" id="btn-review-mistakes" onclick="app.showReviewMistakes()">
+                        <i class="fas fa-search"></i> Pregledaj greške
+                    </button>
+                    <button class="btn btn-primary" onclick="app.restartQuiz()">
+                        <i class="fas fa-redo"></i> Ponovi
+                    </button>
+                    <button class="btn btn-secondary" onclick="app.goHome()">
+                        <i class="fas fa-home"></i> Početna
+                    </button>
+                    <button class="btn btn-secondary" id="btn-next-phase" onclick="app.nextPhase()">
+                        Sljedeći svijet <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="review-mistakes hidden" id="review-mistakes" role="region" aria-label="Pregled grešaka">
+                    <h3>Pregled grešaka</h3>
+                    <div id="review-mistakes-list"></div>
+                    <button class="btn btn-secondary" onclick="app.hideReviewMistakes()" style="margin-top:1rem;">
+                        <i class="fas fa-times"></i> Zatvori
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievement Popup -->
+        <div id="achievement-popup" class="popup hidden" role="dialog" aria-modal="true" aria-labelledby="achievement-title">
+            <div class="popup-content">
+                <div class="achievement-icon">🎉</div>
+                <h3 id="achievement-title">Dostignuće!</h3>
+                <p id="achievement-text">Tekst dostignuća</p>
+                <button class="btn btn-primary" onclick="app.closeAchievement()">Super!</button>
+            </div>
+        </div>
+
+        <!-- Confirm Modal -->
+        <div id="confirm-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title">
+            <div class="modal-content">
+                <h3 id="confirm-modal-title">Želiš li završiti?</h3>
+                <p>Tvoj napredak će biti spremljen.</p>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" onclick="app.hideConfirm()">Nastavi</button>
+                    <button class="btn btn-primary" onclick="app.quitQuiz()">Završi</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Screen -->
+        <div id="settings-screen" class="screen" role="main" aria-label="Postavke">
+            <header class="app-header">
+                <button class="btn btn-back" onclick="app.goHome()">
+                    <i class="fas fa-arrow-left"></i> Natrag
+                </button>
+                <div class="header-title">Postavke</div>
+            </header>
+
+            <main class="settings-main">
+                <div class="settings-group">
+                    <h4>Jezik / Language</h4>
+                    <div class="settings-row">
+                        <label>Odaberi jezik</label>
+                        <select id="lang-select" onchange="app.changeLang(this.value)">
+                            <option value="hr">Hrvatski</option>
+                            <option value="en">English</option>
+                            <option value="de">Deutsch</option>
+                            <option value="it">Italiano</option>
+                            <option value="es">Español</option>
+                            <option value="hu">Magyar</option>
+                            <option value="sr">Српски</option>
+                            <option value="bs">Bosanski</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <h4>Zvuk i audio</h4>
+                    <div class="settings-row">
+                        <label>Zvukovi</label>
+                        <div class="toggle active" id="toggle-sound" onclick="app.toggleSound()" role="switch" aria-checked="true" tabindex="0"></div>
+                    </div>
+                    <div class="settings-row">
+                        <label>Čitaj pitanja na glas</label>
+                        <div class="toggle" id="toggle-speech" onclick="app.toggleSpeech()" role="switch" aria-checked="false" tabindex="0"></div>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <h4>Izgled</h4>
+                    <div class="settings-row">
+                        <label>Tamni način</label>
+                        <div class="toggle" id="toggle-dark" onclick="app.toggleDarkMode()" role="switch" aria-checked="false" tabindex="0"></div>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <h4>Napredak</h4>
+                    <div class="settings-row" style="flex-direction:column;align-items:stretch;gap:0.5rem;">
+                        <label>Resetiraj sav napredak</label>
+                        <button class="btn btn-danger" onclick="app.confirmResetProgress()">
+                            <i class="fas fa-trash"></i> Izbriši sav napredak
+                        </button>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <h4>Podaci</h4>
+                    <div class="settings-row" style="flex-direction:column;align-items:stretch;gap:0.5rem;">
+                        <button class="btn btn-secondary" onclick="app.exportProgress()" style="width:100%;">
+                            <i class="fas fa-download"></i> Izvezi napredak
+                        </button>
+                        <button class="btn btn-secondary" onclick="app.openParentDashboard()" style="width:100%;">
+                            <i class="fas fa-chart-bar"></i> Roditeljski dashboard
+                        </button>
+                    </div>
+                </div>
+
+                <div class="settings-about">
+                    <p>Mentalna Matematika v1.0</p>
+                    <p>Obrazovna igra za djecu</p>
+                </div>
+            </main>
+        </div>
+
+        <!-- Parent Dashboard Screen -->
+        <div id="dashboard-screen" class="screen" role="main" aria-label="Roditeljski dashboard">
+            <header class="app-header">
+                <button class="btn btn-back" onclick="app.openSettings()">
+                    <i class="fas fa-arrow-left"></i> Natrag
+                </button>
+                <div class="header-title">Roditeljski dashboard</div>
+            </header>
+
+            <main class="dashboard-main">
+                <div class="dashboard-overview" id="dashboard-overview">
+                    <div class="dashboard-stat-card">
+                        <div class="dashboard-stat-icon">⭐</div>
+                        <div class="dashboard-stat-value" id="dash-total-stars">0</div>
+                        <div class="dashboard-stat-label">Ukupno zvjezdica</div>
+                    </div>
+                    <div class="dashboard-stat-card">
+                        <div class="dashboard-stat-icon">✅</div>
+                        <div class="dashboard-stat-value" id="dash-total-completed">0</div>
+                        <div class="dashboard-stat-label">Zadataka riješeno</div>
+                    </div>
+                    <div class="dashboard-stat-card">
+                        <div class="dashboard-stat-icon">🔥</div>
+                        <div class="dashboard-stat-value" id="dash-best-streak">0</div>
+                        <div class="dashboard-stat-label">Najbolji niz</div>
+                    </div>
+                    <div class="dashboard-stat-card">
+                        <div class="dashboard-stat-icon">🌍</div>
+                        <div class="dashboard-stat-value" id="dash-phases-unlocked">1</div>
+                        <div class="dashboard-stat-label">Otključanih svjetova</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h3>Napredak po fazama</h3>
+                    <div id="dashboard-phases" class="dashboard-phases-list"></div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h3>Napredak kroz vrijeme</h3>
+                    <canvas id="dashboard-chart" width="400" height="200"></canvas>
+                </div>
+
+                <div class="dashboard-section">
+                    <h3>Slaba područja</h3>
+                    <div id="dashboard-weak-areas" class="dashboard-weak-list"></div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Confetti Container -->
+        <div id="confetti-container"></div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/phases.js"></script>
+    <script src="js/app-core.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/learn-content.js"></script>
+    <script src="js/basket-game.js"></script>
+    <script src="js/learn-engine.js"></script>
+    <script src="js/quiz-engine.js"></script>
+    <script src="js/gamification.js"></script>
+    <script src="js/sound.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/adaptive.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/mobile.js"></script>
+    <script src="js/accessibility.js"></script>
+</body>
+</html>

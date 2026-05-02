@@ -1,0 +1,26 @@
+{
+    "name": "Mentalna Matematika",
+    "short_name": "MentalMath",
+    "description": "Obrazovna igra za učenje mentalnog računanja - Educational math game for kids",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#FFF9F0",
+    "theme_color": "#FF6B6B",
+    "orientation": "portrait-primary",
+    "lang": "hr",
+    "categories": ["education", "games"],
+    "icons": [
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='80' fill='%23FF6B6B'/><text x='256' y='320' font-size='280' text-anchor='middle' fill='white'>🧮</text></svg>",
+            "sizes": "512x512",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='30' fill='%23FF6B6B'/><text x='96' y='120' font-size='100' text-anchor='middle' fill='white'>🧮</text></svg>",
+            "sizes": "192x192",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}

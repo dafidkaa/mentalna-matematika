@@ -1,0 +1,135 @@
+{
+    "app": {
+        "title": "Mental Math",
+        "subtitle": "Learning Through Play",
+        "tagline": "For kids and parents",
+        "footer": "10-15 minutes daily • No pressure • Always end with a win"
+    },
+    "nav": {
+        "back": "Back",
+        "home": "Home",
+        "settings": "Settings"
+    },
+    "home": {
+        "title": "Which world do you want to explore today?",
+        "subtitle": "Each world teaches a different way of thinking!",
+        "dailyChallenge": "Daily Challenge",
+        "dailyDesc": "Solve 10 tasks for a special reward!",
+        "dailyDone": "Daily Challenge - Completed!",
+        "dailyDoneDesc": "Come back tomorrow for a new challenge!",
+        "play": "Play",
+        "done": "✓ Done",
+        "totalStars": "Total stars",
+        "streak": "Correct answer streak"
+    },
+    "phase": {
+        "progress": "tasks completed",
+        "mainIdea": "Main Idea",
+        "mentalSentence": "Mental Sentence",
+        "parentTip": "Parent Tip",
+        "gameModes": "Practice Modes"
+    },
+    "modes": {
+        "learn": "Learn",
+        "learnDesc": "Visual guide",
+        "practice": "Practice",
+        "practiceDesc": "Learn without pressure",
+        "quiz": "Quiz",
+        "quizDesc": "Earn stars",
+        "speed": "Speed",
+        "speedDesc": "10 tasks in 60 seconds",
+        "steps": "Step by Step",
+        "stepsDesc": "Learn the method"
+    },
+    "learn": {
+        "learning": "Learning",
+        "step": "Step",
+        "of": "of",
+        "previous": "Previous",
+        "next": "Next",
+        "finish": "Finish",
+        "progress": "Learning progress"
+    },
+    "quiz": {
+        "question": "Question",
+        "questionOf": "Question",
+        "check": "Check answer",
+        "next": "Next",
+        "hint": "Need help?",
+        "quitTitle": "Do you want to quit?",
+        "quitMsg": "Your progress will be saved.",
+        "continue": "Continue",
+        "finish": "Finish",
+        "fillBlank": "Fill in the blank",
+        "mcq": "Choose an answer",
+        "matching": "Match pairs",
+        "visual": "Visual",
+        "stepsMode": "Step by Step",
+        "practice": "Practice",
+        "daily": "Daily Challenge"
+    },
+    "results": {
+        "bravo": "Bravo, master!",
+        "bravoMsg": "Perfect! You understand this phase excellently!",
+        "great": "Great job!",
+        "greatMsg": "Very good! Just keep practicing!",
+        "good": "Good work!",
+        "goodMsg": "You're learning! Repeat this phase for a better score.",
+        "tryAgain": "No worries!",
+        "tryAgainMsg": "Every attempt is learning. Try again!",
+        "correct": "Correct",
+        "total": "Total",
+        "stars": "Stars",
+        "review": "Review mistakes",
+        "repeat": "Repeat",
+        "nextWorld": "Next world",
+        "noMistakes": "No mistakes! Perfect! 🎉",
+        "yourAnswer": "Your answer:",
+        "correctAnswer": "Correct answer:",
+        "close": "Close",
+        "mistakesReview": "Mistakes Review"
+    },
+    "feedback": {
+        "correct": ["Bravo! 🎉", "Excellent! ⭐", "Correct! 🌟", "Super! 🚀", "Amazing! 💫"],
+        "incorrect": ["Wrong, but we're learning! 💪", "Not quite, here's the explanation. 📚", "Take another look at the explanation. 🤔"]
+    },
+    "settings": {
+        "title": "Settings",
+        "language": "Language",
+        "sound": "Sound",
+        "soundOn": "On",
+        "soundOff": "Off",
+        "darkMode": "Dark Mode",
+        "darkModeOn": "On",
+        "darkModeOff": "Off",
+        "resetProgress": "Reset Progress",
+        "resetConfirm": "Are you sure? All progress will be deleted!",
+        "resetYes": "Yes, delete",
+        "resetNo": "Cancel",
+        "about": "About",
+        "aboutText": "Mental Math is an educational game for kids. It teaches mental calculation through 12 phases, from addition to multiplication near 10.",
+        "credits": "Author: David Bekić-Skeji | 2025",
+        "readAloud": "Read questions aloud",
+        "parentDashboard": "Parent Dashboard"
+    },
+    "achievement": {
+        "streak": "Fire Streak! 🔥",
+        "streakMsg": "You answered {n} questions correctly in a row!"
+    },
+    "phaseNames": {
+        "1": "Friends of Number 10",
+        "2": "Single-Digit Addition",
+        "3": "Addition Beyond 10",
+        "4": "Basic Subtraction",
+        "5": "Subtraction as Distance",
+        "6": "Two-Digit Addition",
+        "7": "Addition by Rounding",
+        "8": "Multiplication as Groups",
+        "9": "Double, Half, ×5 and ×10",
+        "10": "Sharing Things",
+        "11": "Division as Inverse Multiplication",
+        "12": "Speed Math Tricks"
+    },
+    "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+}

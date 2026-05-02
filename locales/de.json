@@ -1,0 +1,135 @@
+{
+    "app": {
+        "title": "Kopfrechnen",
+        "subtitle": "Lernen durch Spielen",
+        "tagline": "Für Kinder und Eltern",
+        "footer": "10-15 Minuten täglich • Kein Druck • Immer mit einem Erfolg beenden"
+    },
+    "nav": {
+        "back": "Zurück",
+        "home": "Startseite",
+        "settings": "Einstellungen"
+    },
+    "home": {
+        "title": "Welche Welt möchtest du heute entdecken?",
+        "subtitle": "Jede Welt lehrt eine andere Denkweise!",
+        "dailyChallenge": "Tägliche Herausforderung",
+        "dailyDesc": "Löse 10 Aufgaben für eine besondere Belohnung!",
+        "dailyDone": "Tägliche Herausforderung - Erledigt!",
+        "dailyDoneDesc": "Komm morgen für eine neue Herausforderung zurück!",
+        "play": "Spielen",
+        "done": "✓ Fertig",
+        "totalStars": "Gesamtsterne",
+        "streak": "Richtige Antworten in Folge"
+    },
+    "phase": {
+        "progress": "Aufgaben gelöst",
+        "mainIdea": "Hauptidee",
+        "mentalSentence": "Gedankensatz",
+        "parentTip": "Tipp für Eltern",
+        "gameModes": "Übungsmodi"
+    },
+    "modes": {
+        "learn": "Lernen",
+        "learnDesc": "Visuelle Anleitung",
+        "practice": "Üben",
+        "practiceDesc": "Ohne Druck lernen",
+        "quiz": "Quiz",
+        "quizDesc": "Sterne verdienen",
+        "speed": "Speed",
+        "speedDesc": "10 Aufgaben in 60 Sekunden",
+        "steps": "Schritt für Schritt",
+        "stepsDesc": "Die Methode lernen"
+    },
+    "learn": {
+        "learning": "Lernen",
+        "step": "Schritt",
+        "of": "von",
+        "previous": "Zurück",
+        "next": "Weiter",
+        "finish": "Fertig",
+        "progress": "Lernfortschritt"
+    },
+    "quiz": {
+        "question": "Frage",
+        "questionOf": "Frage",
+        "check": "Antwort prüfen",
+        "next": "Nächste",
+        "hint": "Brauchst du Hilfe?",
+        "quitTitle": "Möchtest du beenden?",
+        "quitMsg": "Dein Fortschritt wird gespeichert.",
+        "continue": "Weiter",
+        "finish": "Beenden",
+        "fillBlank": "Lücke ausfüllen",
+        "mcq": "Antwort wählen",
+        "matching": "Paare zuordnen",
+        "visual": "Visuell",
+        "stepsMode": "Schritt für Schritt",
+        "practice": "Übung",
+        "daily": "Tägliche Herausforderung"
+    },
+    "results": {
+        "bravo": "Bravo, Meister!",
+        "bravoMsg": "Perfekt! Du verstehst diese Phase hervorragend!",
+        "great": "Großartig!",
+        "greatMsg": "Sehr gut! Weiter üben!",
+        "good": "Gute Arbeit!",
+        "goodMsg": "Du lernst! Wiederhole diese Phase für ein besseres Ergebnis.",
+        "tryAgain": "Macht nichts!",
+        "tryAgainMsg": "Jeder Versuch ist Lernen. Probier es nochmal!",
+        "correct": "Richtig",
+        "total": "Gesamt",
+        "stars": "Sterne",
+        "review": "Fehler ansehen",
+        "repeat": "Wiederholen",
+        "nextWorld": "Nächste Welt",
+        "noMistakes": "Keine Fehler! Perfekt! 🎉",
+        "yourAnswer": "Deine Antwort:",
+        "correctAnswer": "Richtige Antwort:",
+        "close": "Schließen",
+        "mistakesReview": "Fehlerübersicht"
+    },
+    "feedback": {
+        "correct": ["Bravo! 🎉", "Ausgezeichnet! ⭐", "Richtig! 🌟", "Super! 🚀", "Fantastisch! 💫"],
+        "incorrect": ["Falsch, aber wir lernen! 💪", "Nicht ganz richtig, hier ist die Erklärung. 📚", "Schau dir die Erklärung nochmal an. 🤔"]
+    },
+    "settings": {
+        "title": "Einstellungen",
+        "language": "Sprache",
+        "sound": "Ton",
+        "soundOn": "An",
+        "soundOff": "Aus",
+        "darkMode": "Dunkler Modus",
+        "darkModeOn": "An",
+        "darkModeOff": "Aus",
+        "resetProgress": "Fortschritt zurücksetzen",
+        "resetConfirm": "Bist du sicher? Der gesamte Fortschritt wird gelöscht!",
+        "resetYes": "Ja, löschen",
+        "resetNo": "Abbrechen",
+        "about": "Über die App",
+        "aboutText": "Kopfrechnen ist ein Lernspiel für Kinder. Es lehnt Kopfrechnen in 12 Phasen, von Addition bis Multiplikation nahe 10.",
+        "credits": "Autor: David Bekić-Skeji | 2025",
+        "readAloud": "Fragen vorlesen",
+        "parentDashboard": "Eltern-Dashboard"
+    },
+    "achievement": {
+        "streak": "Feuerstrahl! 🔥",
+        "streakMsg": "Du hast {n} Fragen hintereinander richtig beantwortet!"
+    },
+    "phaseNames": {
+        "1": "Freunde der Zahl 10",
+        "2": "Einstellige Addition",
+        "3": "Addition über 10",
+        "4": "Grundlegende Subtraktion",
+        "5": "Subtraktion als Abstand",
+        "6": "Zweistellige Addition",
+        "7": "Addition durch Runden",
+        "8": "Multiplikation als Gruppen",
+        "9": "Das Doppelte, die Hälfte, ×5 und ×10",
+        "10": "Dinge teilen",
+        "11": "Division als umgekehrte Multiplikation",
+        "12": "Schnellrechen-Tricks"
+    },
+    "days": ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
+    "months": ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
+}

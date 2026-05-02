@@ -1,0 +1,291 @@
+/* ==============================
+   MOBILE & RESPONSIVE ENHANCEMENTS
+   Swipe gestures, touch targets,
+   landscape/portrait, tablet
+   ============================== */
+
+/* ---------- SWIPE ZONES ---------- */
+.swipe-zone {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 24px;
+    z-index: 5;
+    opacity: 0;
+    pointer-events: auto;
+}
+
+.swipe-zone-left  { left: 0; }
+.swipe-zone-right { right: 0; }
+
+/* On touch devices, make swipe zones slightly visible for discoverability */
+@media (hover: none) and (pointer: coarse) {
+    .swipe-zone {
+        opacity: 0.04;
+        background: linear-gradient(90deg, rgba(0,0,0,0.08), transparent);
+        width: 32px;
+    }
+    .swipe-zone-right {
+        background: linear-gradient(270deg, rgba(0,0,0,0.08), transparent);
+    }
+}
+
+/* ---------- ENLARGED TOUCH TARGETS (min 44×44dp) ---------- */
+.btn,
+.btn-back,
+.btn-hint,
+.btn-next,
+.btn-submit,
+.btn-challenge,
+.mode-card,
+.phase-card,
+.option-btn,
+.match-item,
+.apple,
+.basket,
+.info-card,
+.daily-challenge-card,
+.stat-badge,
+.results-actions .btn {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Larger buttons on coarse pointer devices */
+@media (hover: none) and (pointer: coarse) {
+    .btn {
+        padding: 0.85rem 1.4rem;
+    }
+    .btn-back {
+        padding: 0.6rem 0.9rem;
+    }
+    .btn-hint {
+        padding: 0.7rem 1.1rem;
+    }
+    .btn-submit,
+    .btn-next,
+    .btn-challenge {
+        padding: 1rem 1.6rem;
+        font-size: 1.1rem;
+    }
+    .mode-card {
+        padding: 1.2rem;
+    }
+    .phase-card {
+        padding: 1.1rem;
+    }
+    .option-btn {
+        padding: 1rem;
+        font-size: 1.15rem;
+        min-height: 52px;
+    }
+    .match-item {
+        padding: 0.9rem;
+        font-size: 1.1rem;
+        min-height: 52px;
+    }
+}
+
+/* ---------- LANDSCAPE ORIENTATION ---------- */
+@media (orientation: landscape) and (max-height: 500px) {
+    /* Splash: shrink character, reduce padding */
+    #splash-screen .splash-content {
+        padding: 0.8rem;
+    }
+    #splash-screen .splash-character {
+        font-size: 3.5rem;
+    }
+    #splash-screen h1 {
+        font-size: 1.6rem;
+    }
+    #splash-screen .splash-tagline,
+    #splash-screen .splash-philosophy-card {
+        display: none;
+    }
+    #splash-screen .splash-loading {
+        margin-top: 0.5rem;
+    }
+
+    /* Header compact */
+    .app-header {
+        padding: 0.4rem 0.8rem;
+        min-height: 44px;
+    }
+    .header-logo .logo-text {
+        font-size: 0.95rem;
+    }
+
+    /* Home: horizontal scroll for phases */
+    .phases-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0.7rem;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    .phase-card {
+        flex: 0 0 260px;
+        scroll-snap-align: start;
+    }
+
+    /* Quiz: side-by-side layout where possible */
+    .quiz-main {
+        padding: 0.6rem;
+        max-width: 100%;
+    }
+    .question-card {
+        padding: 0.8rem;
+    }
+    .question-content .math-expression {
+        font-size: 1.4rem;
+    }
+    .options-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+    }
+    .quiz-actions {
+        padding: 0.5rem 0;
+    }
+
+    /* Learn: compact */
+    .learn-main {
+        padding: 0.6rem;
+    }
+    .learn-card {
+        padding: 0.8rem;
+    }
+
+    /* Results: horizontal stats */
+    .results-stats {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .results-content {
+        padding: 1rem;
+    }
+}
+
+/* ---------- TABLET VIEWPORT (601px–1024px) ---------- */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .phases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .mode-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .options-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .matching-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .quiz-main,
+    .learn-main,
+    .phase-main,
+    .home-main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 1.2rem;
+    }
+    .app-header {
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+/* ---------- PORTRAIT TABLET (height > width) ---------- */
+@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
+    .phase-icon {
+        font-size: 3.5rem;
+    }
+    .mode-icon {
+        font-size: 2.2rem;
+    }
+    .splash-character {
+        font-size: 6rem;
+    }
+}
+
+/* ---------- SAFE AREA INSETS (notch phones) ---------- */
+@supports (padding: max(0px)) {
+    .app-header {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+        padding-top: max(0.6rem, env(safe-area-inset-top));
+    }
+    .screen {
+        padding-bottom: max(0px, env(safe-area-inset-bottom));
+    }
+    .quiz-actions,
+    .learn-nav,
+    .results-actions {
+        padding-bottom: max(0.8rem, env(safe-area-inset-bottom));
+    }
+}
+
+/* ---------- SCROLLBAR HIDE (mobile web-app feel) ---------- */
+.phases-grid::-webkit-scrollbar,
+.options-grid::-webkit-scrollbar {
+    display: none;
+}
+.phases-grid,
+.options-grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* ---------- ACTIVE/FEEDBACK STATES FOR TOUCH ---------- */
+@media (hover: none) and (pointer: coarse) {
+    .btn:active,
+    .mode-card:active,
+    .phase-card:active,
+    .option-btn:active,
+    .match-item:active,
+    .daily-challenge-card:active {
+        transform: scale(0.97);
+        opacity: 0.92;
+    }
+    .btn,
+    .mode-card,
+    .phase-card,
+    .option-btn,
+    .match-item {
+        transition: transform 0.1s ease, opacity 0.1s ease;
+    }
+}
+
+/* ---------- DISABLED TEXT SELECTION ON INTERACTIVE ELEMENTS ---------- */
+.btn,
+.mode-card,
+.phase-card,
+.option-btn,
+.match-item,
+.apple,
+.basket,
+.swipe-zone {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+/* ---------- VISUAL HINT FOR SWIPE NAVIGATION ---------- */
+.swipe-hint {
+    display: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .swipe-hint {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        color: var(--color-text-secondary);
+        margin: 0.3rem 0;
+        opacity: 0.7;
+    }
+    .swipe-hint i {
+        font-size: 0.9rem;
+    }
+}

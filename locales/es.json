@@ -1,0 +1,135 @@
+{
+    "app": {
+        "title": "Cálculo Mental",
+        "subtitle": "Aprender Jugando",
+        "tagline": "Para niños y padres",
+        "footer": "10-15 minutos al día • Sin presión • Siempre termina con una victoria"
+    },
+    "nav": {
+        "back": "Atrás",
+        "home": "Inicio",
+        "settings": "Configuración"
+    },
+    "home": {
+        "title": "¿Qué mundo quieres explorar hoy?",
+        "subtitle": "¡Cada mundo enseña una forma diferente de pensar!",
+        "dailyChallenge": "Desafío Diario",
+        "dailyDesc": "¡Resuelve 10 tareas para una recompensa especial!",
+        "dailyDone": "Desafío Diario - ¡Completado!",
+        "dailyDoneDesc": "¡Vuelve mañana para un nuevo desafío!",
+        "play": "Jugar",
+        "done": "✓ Hecho",
+        "totalStars": "Estrellas totales",
+        "streak": "Racha de respuestas correctas"
+    },
+    "phase": {
+        "progress": "tareas completadas",
+        "mainIdea": "Idea Principal",
+        "mentalSentence": "Frase Mental",
+        "parentTip": "Consejo para Padres",
+        "gameModes": "Modos de Práctica"
+    },
+    "modes": {
+        "learn": "Aprender",
+        "learnDesc": "Guía visual",
+        "practice": "Practicar",
+        "practiceDesc": "Aprende sin presión",
+        "quiz": "Cuestionario",
+        "quizDesc": "Gana estrellas",
+        "speed": "Velocidad",
+        "speedDesc": "10 tareas en 60 segundos",
+        "steps": "Paso a Paso",
+        "stepsDesc": "Aprende el método"
+    },
+    "learn": {
+        "learning": "Aprendizaje",
+        "step": "Paso",
+        "of": "de",
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "finish": "Terminar",
+        "progress": "Progreso de aprendizaje"
+    },
+    "quiz": {
+        "question": "Pregunta",
+        "questionOf": "Pregunta",
+        "check": "Comprobar respuesta",
+        "next": "Siguiente",
+        "hint": "¿Necesitas ayuda?",
+        "quitTitle": "¿Quieres salir?",
+        "quitMsg": "Tu progreso se guardará.",
+        "continue": "Continuar",
+        "finish": "Terminar",
+        "fillBlank": "Rellenar el espacio",
+        "mcq": "Elige una respuesta",
+        "matching": "Emparejar parejas",
+        "visual": "Visual",
+        "stepsMode": "Paso a Paso",
+        "practice": "Práctica",
+        "daily": "Desafío Diario"
+    },
+    "results": {
+        "bravo": "¡Bravo, maestro!",
+        "bravoMsg": "¡Perfecto! ¡Entiendes esta fase de maravilla!",
+        "great": "¡Excelente!",
+        "greatMsg": "¡Muy bien! ¡Sigue practicando!",
+        "good": "¡Buen trabajo!",
+        "goodMsg": "¡Estás aprendiendo! Repite esta fase para un mejor resultado.",
+        "tryAgain": "¡No pasa nada!",
+        "tryAgainMsg": "Cada intento es aprendizaje. ¡Inténtalo de nuevo!",
+        "correct": "Correctas",
+        "total": "Total",
+        "stars": "Estrellas",
+        "review": "Revisar errores",
+        "repeat": "Repetir",
+        "nextWorld": "Siguiente mundo",
+        "noMistakes": "¡Sin errores! ¡Perfecto! 🎉",
+        "yourAnswer": "Tu respuesta:",
+        "correctAnswer": "Respuesta correcta:",
+        "close": "Cerrar",
+        "mistakesReview": "Revisión de errores"
+    },
+    "feedback": {
+        "correct": ["¡Bravo! 🎉", "¡Excelente! ⭐", "¡Correcto! 🌟", "¡Súper! 🚀", "¡Fantástico! 💫"],
+        "incorrect": ["¡Incorrecto, pero estamos aprendiendo! 💪", "No es correcto, aquí tienes la explicación. 📚", "Vuelve a mirar la explicación. 🤔"]
+    },
+    "settings": {
+        "title": "Configuración",
+        "language": "Idioma",
+        "sound": "Sonido",
+        "soundOn": "Encendido",
+        "soundOff": "Apagado",
+        "darkMode": "Modo Oscuro",
+        "darkModeOn": "Encendido",
+        "darkModeOff": "Apagado",
+        "resetProgress": "Resetear Progreso",
+        "resetConfirm": "¿Estás seguro? ¡Todo el progreso se borrará!",
+        "resetYes": "Sí, borrar",
+        "resetNo": "Cancelar",
+        "about": "Acerca de",
+        "aboutText": "Cálculo Mental es un juego educativo para niños. Enseña cálculo mental a través de 12 fases, desde la suma hasta la multiplicación cerca de 10.",
+        "credits": "Autor: David Bekić-Skeji | 2025",
+        "readAloud": "Leer preguntas en voz alta",
+        "parentDashboard": "Panel de Padres"
+    },
+    "achievement": {
+        "streak": "¡Racha de Fuego! 🔥",
+        "streakMsg": "¡Respondiste {n} preguntas correctamente seguidas!"
+    },
+    "phaseNames": {
+        "1": "Amigos del Número 10",
+        "2": "Suma de Una Cifra",
+        "3": "Suma Más Allá de 10",
+        "4": "Resta Básica",
+        "5": "Resta como Distancia",
+        "6": "Suma de Dos Cifras",
+        "7": "Suma por Redondeo",
+        "8": "Multiplicación como Grupos",
+        "9": "Doble, Mitad, ×5 y ×10",
+        "10": "Compartir Cosas",
+        "11": "División como Multiplicación Inversa",
+        "12": "Trucos de Cálculo Rápido"
+    },
+    "days": ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+    "months": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+}

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mentalna Matematika - Unit Tests</title>
+    <style>
+        body { font-family: monospace; padding: 2rem; background: #1a1a2e; color: #e8e8e8; }
+        h1 { color: #FF6B6B; }
+        .pass { color: #52D681; }
+        .fail { color: #FF6B6B; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.5rem 1rem; text-align: left; border-bottom: 1px solid #2a2a4a; }
+        th { color: #FFE66D; }
+        .summary { font-size: 1.2rem; margin: 1rem 0; padding: 1rem; background: #16213e; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Mentalna Matematika - Unit Tests</h1>
+    <div id="results"></div>
+    <script src="../js/phases.js"></script>
+    <script>
+    const results = [];
+    
+    function assert(condition, name) {
+        results.push({ name, passed: condition });
+        if (!condition) {
+            results[results.length - 1].error = 'Assertion failed';
+        }
+    }
+    
+    function assertEqual(actual, expected, name) {
+        const passed = actual === expected;
+        results.push({ name, passed });
+        if (!passed) {
+            results[results.length - 1].error = `Expected ${expected}, got ${actual}`;
+        }
+    }
+    
+    function assertNotNaN(value, name) {
+        const passed = !isNaN(value);
+        results.push({ name, passed });
+        if (!passed) {
+            results[results.length - 1].error = `Value is NaN`;
+        }
+    }
+
+    // ==============================
+    // randInt tests
+    // ==============================
+    
+    (function testRandInt() {
+        for (let i = 0; i < 100; i++) {
+            const val = randInt(1, 10);
+            assert(val >= 1 && val <= 10, `randInt(1,10) in range [attempt ${i+1}]`);
+        }
+        
+        for (let i = 0; i < 100; i++) {
+            const val = randInt(5, 5);
+            assertEqual(val, 5, `randInt(5,5) always 5 [attempt ${i+1}]`);
+        }
+        
+        const val = randInt(10, 1);
+        assert(val >= 1 && val <= 10, `randInt(10,1) still returns value in [1,10]`);
+    })();
+
+    // ==============================
+    // shuffle tests
+    // ==============================
+    
+    (function testShuffle() {
+        const arr = [1, 2, 3, 4, 5];
+        const shuffled = shuffle(arr);
+        assertEqual(arr.length, 5, 'shuffle does not modify original length');
+        assertEqual(shuffled.length, 5, 'shuffled array has same length');
+        assert(shuffled.includes(1) && shuffled.includes(2) && shuffled.includes(3) && shuffled.includes(4) && shuffled.includes(5), 'shuffle preserves all elements');
+    })();
+
+    // ==============================
+    // generateWrongAnswers tests
+    // ==============================
+    
+    (function testWrongAnswers() {
+        const wrong = generateWrongAnswers(5, 1, 10, 3);
+        assertEqual(wrong.length, 3, 'generateWrongAnswers returns correct count');
+        assert(!wrong.includes(5), 'wrong answers do not include correct answer');
+        wrong.forEach(v => assert(v >= 0, `wrong answer ${v} is non-negative`));
+        
+        // Test with narrow range
+        const narrow = generateWrongAnswers(2, 1, 3, 2);
+        assertEqual(narrow.length, 2, 'narrow range produces correct count');
+        assert(!narrow.includes(2), 'narrow range excludes correct answer');
+    })();
+
+    // ==============================
+    // Phase 1 generator tests
+    // ==============================
+    
+    (function testPhase1() {
+        const qs = generatePhase1(10);
+        assertEqual(qs.length, 10, 'Phase 1 generates 10 questions');
+        qs.forEach((q, i) => {
+            assert(['fill_blank', 'mcq', 'matching'].includes(q.type), `Phase 1 q${i} has valid type`);
+            assertNotNaN(q.answer, `Phase 1 q${i} answer is not NaN`);
+            if (q.type === 'mcq') {
+                assert(q.options.includes(q.answer), `Phase 1 MCQ q${i} includes correct answer`);
+                q.options.forEach(opt => assertNotNaN(opt, `Phase 1 MCQ q${i} option is not NaN`));
+            }
+        });
+    })();
+
+    // ==============================
+    // Phase 2 generator tests
+    // ==============================
+    
+    (function testPhase2() {
+        const qs = generatePhase2(20);
+        assert(qs.length >= 5, 'Phase 2 generates questions');
+        qs.forEach((q, i) => {
+            assertNotNaN(q.answer, `Phase 2 q${i} answer is not NaN`);
+            assert(q.answer <= 9, `Phase 2 q${i} sum <= 9 (no carry)`);
+            if (q.type === 'mcq') {
+                q.options.forEach(opt => assertNotNaN(opt, `Phase 2 MCQ q${i} option not NaN`));
+            }
+        });
+    })();
+
+    // ==============================
+    // Phase 3 generator tests
+    // ==============================
+    
+    (function testPhase3() {
+        const qs = generatePhase3(10);
+        assertEqual(qs.length, 10, 'Phase 3 generates 10 questions');
+        qs.forEach((q, i) => {
+            assertNotNaN(q.answer, `Phase 3 q${i} answer is not NaN`);
+            assert(q.answer >= 11 && q.answer <= 18, `Phase 3 q${i} answer in valid range [11-18]`);
+        });
+    })();
+
+    // ==============================
+    // Phase 4 generator tests
+    // ==============================
+    
+    (function testPhase4() {
+        const qs = generatePhase4(10);
+        assertEqual(qs.length, 10, 'Phase 4 generates 10 questions');
+        qs.forEach((q, i) => {
+            assertNotNaN(q.answer, `Phase 4 q${i} answer is not NaN`);
+            assert(q.answer >= 0, `Phase 4 q${i} answer non-negative`);
+        });
+    })();
+
+    // ==============================
+    // Phase 5 generator tests
+    // ==============================
+    
+    (function testPhase5() {
+        const qs = generatePhase5(10);
+        assertEqual(qs.length, 10, 'Phase 5 generates 10 questions');
+        qs.forEach((q, i) => {
+            assertNotNaN(q.answer, `Phase 5 q${i} answer is not NaN`);
+            assert(q.answer > 0, `Phase 5 q${i} answer positive`);
+        });
+    })();
+
+    // ==============================
+    // Phase 6 generator tests
+    // ==============================
+    
+    (function testPhase6() {
+        const qs = generatePhase6(10);
+        assert(qs.length >= 5, 'Phase 6 generates questions');
+        qs.forEach((q, i) => {
+            assertNotNaN(q.answer, `Phase 6 q${i} answer is not NaN`);
+        });
+    })();
+
+    // ==============================
+    // Phase 7 generator tests
+    // ==============================
+    
+    (function testPhase7() {
+        const qs = generatePhase7(10);
+        assert(qs.length >= 5, 'Phase 7 generates questions');
+        qs.forEach((q, i) => {
+            assertNotNaN(q.answer, `Phase 7 q${i} answer is not NaN`);
+        });
+    })();
+
+    // ==============================
+    // Phase 8 generator tests
+    // ==============================
+    
+    (function testPhase8() {
+        const qs = generatePhase8(10);
+        assertEqual(qs.length, 10, 'Phase 8 generates 10 questions');
+        qs.forEach((q, i) => {
+            assertNotNaN(q.answer, `Phase 8 q${i} answer is not NaN`);
+            assert(q.answer >= 4 && q.answer <= 100, `Phase 8 q${i} answer in valid range`);
+        });
+    })();
+
+    // ==============================
+    // Phase 9 generator tests
+    // ==============================
+    
+    (function testPhase9() {
+        const qs = generatePhase9(10);
+        assertEqual(qs.length, 10, 'Phase 9 generates 10 questions');
+        qs.forEach((q, i) => {
+            assertNotNaN(q.answer, `Phase 9 q${i} answer is not NaN`);
+            assert(Number.isInteger(q.answer), `Phase 9 q${i} answer is integer`);
+        });
+    })();
+
+    // ==============================
+    // Phase 10 generator tests
+    // ==============================
+    
+    (function testPhase10() {
+        const qs = generatePhase10(10);
+        assertEqual(qs.length, 10, 'Phase 10 generates 10 questions');
+        qs.forEach((q, i) => {
+            assertNotNaN(q.answer, `Phase 10 q${i} answer is not NaN`);
+            assert(q.answer >= 1, `Phase 10 q${i} answer >= 1`);
+        });
+    })();
+
+    // ==============================
+    // Phase 11 generator tests
+    // ==============================
+    
+    (function testPhase11() {
+        const qs = generatePhase11(10);
+        assertEqual(qs.length, 10, 'Phase 11 generates 10 questions');
+        qs.forEach((q, i) => {
+            assertNotNaN(q.answer, `Phase 11 q${i} answer is not NaN`);
+            if (q.type === 'mcq') {
+                q.options.forEach(opt => {
+                    assertNotNaN(opt, `Phase 11 MCQ q${i} option not NaN`);
+                    assert(Number.isInteger(opt), `Phase 11 MCQ q${i} option is integer (got ${opt})`);
+                });
+            }
+        });
+    })();
+
+    // ==============================
+    // Phase 12 generator tests
+    // ==============================
+    
+    (function testPhase12() {
+        const qs = generatePhase12(10);
+        assertEqual(qs.length, 10, 'Phase 12 generates 10 questions');
+        qs.forEach((q, i) => {
+            assertNotNaN(q.answer, `Phase 12 q${i} answer is not NaN`);
+        });
+    })();
+
+    // ==============================
+    // Render results
+    // ==============================
+    
+    const passed = results.filter(r => r.passed).length;
+    const failed = results.filter(r => !r.passed).length;
+    const total = results.length;
+    
+    let html = `<div class="summary">
+        <span class="${failed === 0 ? 'pass' : 'fail'}">
+            ${passed}/${total} tests passed${failed > 0 ? `, ${failed} failed` : ' - ALL PASS! ✅'}
+        </span>
+    </div>`;
+    
+    html += '<table><tr><th>Status</th><th>Test</th><th>Details</th></tr>';
+    results.forEach(r => {
+        html += `<tr>
+            <td class="${r.passed ? 'pass' : 'fail'}">${r.passed ? '✓' : '✗'}</td>
+            <td>${r.name}</td>
+            <td>${r.error || ''}</td>
+        </tr>`;
+    });
+    html += '</table>';
+    
+    document.getElementById('results').innerHTML = html;
+    console.log(`Tests: ${passed}/${total} passed`);
+    </script>
+</body>
+</html>

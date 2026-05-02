@@ -1,0 +1,135 @@
+{
+    "app": {
+        "title": "Mentalna Matematika",
+        "subtitle": "Učenje kroz Igru",
+        "tagline": "Za decu i roditelje",
+        "footer": "10-15 minuta dnevno • Bez forsiranja • Uvek završi sa pobedom"
+    },
+    "nav": {
+        "back": "Nazad",
+        "home": "Početna",
+        "settings": "Podešavanja"
+    },
+    "home": {
+        "title": "Koji svet želiš da istražiš danas?",
+        "subtitle": "Svaki svet uči drugačiji način razmišljanja!",
+        "dailyChallenge": "Dnevni Izazov",
+        "dailyDesc": "Reši 10 zadataka za posebnu nagradu!",
+        "dailyDone": "Dnevni Izazov - Završen!",
+        "dailyDoneDesc": "Vrati se sutra za novi izazov!",
+        "play": "Igraj",
+        "done": "✓ Gotovo",
+        "totalStars": "Ukupno zvezdica",
+        "streak": "Niz tačnih odgovora"
+    },
+    "phase": {
+        "progress": "zadataka rešeno",
+        "mainIdea": "Glavna ideja",
+        "mentalSentence": "Mentalna rečenica",
+        "parentTip": "Savet za roditelje",
+        "gameModes": "Načini vežbanja"
+    },
+    "modes": {
+        "learn": "Uči",
+        "learnDesc": "Vizuelni vodič",
+        "practice": "Vežbaj",
+        "practiceDesc": "Uči bez pritiska",
+        "quiz": "Kviz",
+        "quizDesc": "Zaradi zvezdice",
+        "speed": "Brzinski",
+        "speedDesc": "10 zadataka u 60 sekundi",
+        "steps": "Korak po korak",
+        "stepsDesc": "Nauči metodu"
+    },
+    "learn": {
+        "learning": "Učenje",
+        "step": "Korak",
+        "of": "od",
+        "previous": "Prethodni",
+        "next": "Sledeći",
+        "finish": "Završi",
+        "progress": "Napredak učenja"
+    },
+    "quiz": {
+        "question": "Pitanje",
+        "questionOf": "Pitanje",
+        "check": "Proveri odgovor",
+        "next": "Sledeće",
+        "hint": "Treba ti pomoć?",
+        "quitTitle": "Želiš li da završiš?",
+        "quitMsg": "Tvoj napredak će biti sačuvan.",
+        "continue": "Nastavi",
+        "finish": "Završi",
+        "fillBlank": "Dopuni prazninu",
+        "mcq": "Odaberi odgovor",
+        "matching": "Spoji parove",
+        "visual": "Vizuelno",
+        "stepsMode": "Korak po korak",
+        "practice": "Vežba",
+        "daily": "Dnevni izazov"
+    },
+    "results": {
+        "bravo": "Bravo, majstore!",
+        "bravoMsg": "Savršeno! Odlično razumeš ovu fazu!",
+        "great": "Odlično!",
+        "greatMsg": "Vrlo dobro! Samo nastavi da vežbaš!",
+        "good": "Dobar posao!",
+        "goodMsg": "Učiš! Ponovi ovu fazu za bolji rezultat.",
+        "tryAgain": "Nema veze!",
+        "tryAgainMsg": "Svaki pokušaj je učenje. Pokušaj ponovo!",
+        "correct": "Tačnih",
+        "total": "Ukupno",
+        "stars": "Zvezdica",
+        "review": "Pregledaj greške",
+        "repeat": "Ponovi",
+        "nextWorld": "Sledeći svet",
+        "noMistakes": "Nema grešaka! Savršeno! 🎉",
+        "yourAnswer": "Tvoj odgovor:",
+        "correctAnswer": "Tačan odgovor:",
+        "close": "Zatvori",
+        "mistakesReview": "Pregled grešaka"
+    },
+    "feedback": {
+        "correct": ["Bravo! 🎉", "Odlično! ⭐", "Tačno! 🌟", "Super! 🚀", "Sjajno! 💫"],
+        "incorrect": ["Pogrešno, ali učimo se! 💪", "Nije tačno, evo objašnjenja. 📚", "Još jednom pogledaj objašnjenje. 🤔"]
+    },
+    "settings": {
+        "title": "Podešavanja",
+        "language": "Jezik",
+        "sound": "Zvuk",
+        "soundOn": "Uključen",
+        "soundOff": "Isključen",
+        "darkMode": "Tamni režim",
+        "darkModeOn": "Uključen",
+        "darkModeOff": "Isključen",
+        "resetProgress": "Resetuj napredak",
+        "resetConfirm": "Da li si siguran/na? Sav napredak će biti izbrisan!",
+        "resetYes": "Da, izbriši",
+        "resetNo": "Odustani",
+        "about": "O aplikaciji",
+        "aboutText": "Mentalna Matematika je obrazovna igra za decu. Uči mentalno računanje kroz 12 faza, od sabiranja do množenja blizu 10.",
+        "credits": "Autor: David Bekić-Skeji | 2025",
+        "readAloud": "Čitaj pitanja naglas",
+        "parentDashboard": "Roditeljski dashboard"
+    },
+    "achievement": {
+        "streak": "Vatreni niz! 🔥",
+        "streakMsg": "Odgovorio/la si tačno {n} zadataka zaredom!"
+    },
+    "phaseNames": {
+        "1": "Prijatelji broja 10",
+        "2": "Jednocifreno sabiranje",
+        "3": "Sabiranje preko 10",
+        "4": "Osnovno oduzimanje",
+        "5": "Oduzimanje kao rastojanje",
+        "6": "Dvocifreno sabiranje",
+        "7": "Sabiranje zaokruživanjem",
+        "8": "Množenje kao grupe",
+        "9": "Duplo, pola, ×5 i ×10",
+        "10": "Deljenje stvari",
+        "11": "Deljenje kao obrnuto množenje",
+        "12": "Speed math trikovi"
+    },
+    "days": ["Nedelja", "Ponedeljak", "Utorak", "Sreda", "Četvrtak", "Petak", "Subota"],
+    "months": ["Januar", "Februar", "Mart", "April", "Maj", "Jun", "Jul", "Avgust", "Septembar", "Oktobar", "Novembar", "Decembar"]
+}

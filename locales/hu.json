@@ -1,0 +1,135 @@
+{
+    "app": {
+        "title": "Számtani Fejben",
+        "subtitle": "Tanulás Játékkal",
+        "tagline": "Gyerekeknek és szülőknek",
+        "footer": "Naponta 10-15 perc • Nyomás nélkül • Mindig sikerrel zárul"
+    },
+    "nav": {
+        "back": "Vissza",
+        "home": "Kezdőlap",
+        "settings": "Beállítások"
+    },
+    "home": {
+        "title": "Melyik világot szeretnéd felfedezni ma?",
+        "subtitle": "Minden világ más-más gondolkodásmódot tanít!",
+        "dailyChallenge": "Napi Kihívás",
+        "dailyDesc": "Oldj meg 10 feladatot egy különleges jutalomért!",
+        "dailyDone": "Napi Kihívás - Teljesítve!",
+        "dailyDoneDesc": "Gyere vissza holnap egy új kihívásért!",
+        "play": "Játék",
+        "done": "✓ Kész",
+        "totalStars": "Összes csillag",
+        "streak": "Helyes válaszok sorozata"
+    },
+    "phase": {
+        "progress": "feladat megoldva",
+        "mainIdea": "Fő ötlet",
+        "mentalSentence": "Szellemi mondat",
+        "parentTip": "Tipp szülőknek",
+        "gameModes": "Gyakorlási módok"
+    },
+    "modes": {
+        "learn": "Tanulj",
+        "learnDesc": "Vizuális útmutató",
+        "practice": "Gyakorolj",
+        "practiceDesc": "Tanulj nyomás nélkül",
+        "quiz": "Kvíz",
+        "quizDesc": "Szerezz csillagokat",
+        "speed": "Sebesség",
+        "speedDesc": "10 feladat 60 másodperc alatt",
+        "steps": "Lépésről Lépésre",
+        "stepsDesc": "Tanuld meg a módszert"
+    },
+    "learn": {
+        "learning": "Tanulás",
+        "step": "Lépés",
+        "of": "/",
+        "previous": "Előző",
+        "next": "Következő",
+        "finish": "Befejezés",
+        "progress": "Tanulási előrehaladás"
+    },
+    "quiz": {
+        "question": "Kérdés",
+        "questionOf": "Kérdés",
+        "check": "Válasz ellenőrzése",
+        "next": "Következő",
+        "hint": "Segítség kell?",
+        "quitTitle": "Ki akarsz lépni?",
+        "quitMsg": "Az előrehaladásod mentésre kerül.",
+        "continue": "Folytatás",
+        "finish": "Befejezés",
+        "fillBlank": "Töltsd ki az üres helyet",
+        "mcq": "Válassz választ",
+        "matching": "Párosítsd össze",
+        "visual": "Vizuális",
+        "stepsMode": "Lépésről Lépésre",
+        "practice": "Gyakorlás",
+        "daily": "Napi Kihívás"
+    },
+    "results": {
+        "bravo": "Bravó, mester!",
+        "bravoMsg": "Tökéletes! Kiválóan érted ezt a fázist!",
+        "great": "Nagyszerű!",
+        "greatMsg": "Nagyon jó! Csak folytasd a gyakorlást!",
+        "good": "Jó munka!",
+        "goodMsg": "Tanulsz! Ismételd meg ezt a fázist jobb eredményért.",
+        "tryAgain": "Semmi baj!",
+        "tryAgainMsg": "Minden kísérlet tanulás. Próbáld újra!",
+        "correct": "Helyes",
+        "total": "Összesen",
+        "stars": "Csillag",
+        "review": "Hibák áttekintése",
+        "repeat": "Ismétlés",
+        "nextWorld": "Következő világ",
+        "noMistakes": "Nincs hiba! Tökéletes! 🎉",
+        "yourAnswer": "A válaszod:",
+        "correctAnswer": "Helyes válasz:",
+        "close": "Bezárás",
+        "mistakesReview": "Hibák áttekintése"
+    },
+    "feedback": {
+        "correct": ["Bravó! 🎉", "Kiváló! ⭐", "Helyes! 🌟", "Szuper! 🚀", "Csodálatos! 💫"],
+        "incorrect": ["Hibás, de tanulunk! 💪", "Nem helyes, itt a magyarázat. 📚", "Nézd meg újra a magyarázatot. 🤔"]
+    },
+    "settings": {
+        "title": "Beállítások",
+        "language": "Nyelv",
+        "sound": "Hang",
+        "soundOn": "Be",
+        "soundOff": "Ki",
+        "darkMode": "Sötét mód",
+        "darkModeOn": "Be",
+        "darkModeOff": "Ki",
+        "resetProgress": "Előrehaladás törlése",
+        "resetConfirm": "Biztos vagy benne? Az összes előrehaladás törlődik!",
+        "resetYes": "Igen, törlés",
+        "resetNo": "Mégse",
+        "about": "Névjegy",
+        "aboutText": "A Számtani Fejben egy oktatási játék gyerekeknek. Fejben számolást tanít 12 fázison keresztül, az összeadástól a 10 körüli szorzásig.",
+        "credits": "Szerző: David Bekić-Skeji | 2025",
+        "readAloud": "Kérdések felolvasása",
+        "parentDashboard": "Szülői vezérlőpult"
+    },
+    "achievement": {
+        "streak": "Tűz-széria! 🔥",
+        "streakMsg": "{n} kérdést válaszoltál meg helyesen egymás után!"
+    },
+    "phaseNames": {
+        "1": "A 10 Barátai",
+        "2": "Egyjegyű Összeadás",
+        "3": "Összeadás 10 Felett",
+        "4": "Alapvető Kivonás",
+        "5": "Kivonás Mint Távolság",
+        "6": "Kétjegyű Összeadás",
+        "7": "Összeadás Kerekítéssel",
+        "8": "Szorzás Mint Csoportok",
+        "9": "Dupla, Fél, ×5 és ×10",
+        "10": "Dolgok Megosztása",
+        "11": "Osztás Mint Fordított Szorzás",
+        "12": "Gyorsszámlálási Trükkök"
+    },
+    "days": ["Vasárnap", "Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat"],
+    "months": ["Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"]
+}

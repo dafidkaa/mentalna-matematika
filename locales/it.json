@@ -1,0 +1,135 @@
+{
+    "app": {
+        "title": "Calcolo Mentale",
+        "subtitle": "Imparare Giocando",
+        "tagline": "Per bambini e genitori",
+        "footer": "10-15 minuti al giorno • Senza pressione • Finisci sempre con una vittoria"
+    },
+    "nav": {
+        "back": "Indietro",
+        "home": "Home",
+        "settings": "Impostazioni"
+    },
+    "home": {
+        "title": "Quale mondo vuoi esplorare oggi?",
+        "subtitle": "Ogni mondo insegna un modo diverso di pensare!",
+        "dailyChallenge": "Sfida Giornaliera",
+        "dailyDesc": "Risolvi 10 compiti per una ricompensa speciale!",
+        "dailyDone": "Sfida Giornaliera - Completata!",
+        "dailyDoneDesc": "Torna domani per una nuova sfida!",
+        "play": "Gioca",
+        "done": "✓ Fatto",
+        "totalStars": "Stelle totali",
+        "streak": "Serie di risposte corrette"
+    },
+    "phase": {
+        "progress": "compiti completati",
+        "mainIdea": "Idea Principale",
+        "mentalSentence": "Frase Mentale",
+        "parentTip": "Consiglio per i Genitori",
+        "gameModes": "Modalità di Esercizio"
+    },
+    "modes": {
+        "learn": "Impara",
+        "learnDesc": "Guida visiva",
+        "practice": "Esercitati",
+        "practiceDesc": "Impara senza pressione",
+        "quiz": "Quiz",
+        "quizDesc": "Guadagna stelle",
+        "speed": "Velocità",
+        "speedDesc": "10 compiti in 60 secondi",
+        "steps": "Passo dopo Passo",
+        "stepsDesc": "Impara il metodo"
+    },
+    "learn": {
+        "learning": "Apprendimento",
+        "step": "Passo",
+        "of": "di",
+        "previous": "Precedente",
+        "next": "Successivo",
+        "finish": "Fine",
+        "progress": "Progresso dell'apprendimento"
+    },
+    "quiz": {
+        "question": "Domanda",
+        "questionOf": "Domanda",
+        "check": "Controlla la risposta",
+        "next": "Successiva",
+        "hint": "Hai bisogno di aiuto?",
+        "quitTitle": "Vuoi uscire?",
+        "quitMsg": "Il tuo progresso sarà salvato.",
+        "continue": "Continua",
+        "finish": "Fine",
+        "fillBlank": "Riempi lo spazio",
+        "mcq": "Scegli una risposta",
+        "matching": "Abbina le coppie",
+        "visual": "Visivo",
+        "stepsMode": "Passo dopo Passo",
+        "practice": "Esercizio",
+        "daily": "Sfida Giornaliera"
+    },
+    "results": {
+        "bravo": "Bravo, maestro!",
+        "bravoMsg": "Perfetto! Capisci questa fase in modo eccellente!",
+        "great": "Ottimo lavoro!",
+        "greatMsg": "Molto bene! Continua a esercitarti!",
+        "good": "Buon lavoro!",
+        "goodMsg": "Stai imparando! Ripeti questa fase per un risultato migliore.",
+        "tryAgain": "Nessun problema!",
+        "tryAgainMsg": "Ogni tentativo è un apprendimento. Riprova!",
+        "correct": "Corrette",
+        "total": "Totale",
+        "stars": "Stelle",
+        "review": "Rivedi gli errori",
+        "repeat": "Ripeti",
+        "nextWorld": "Prossimo mondo",
+        "noMistakes": "Nessun errore! Perfetto! 🎉",
+        "yourAnswer": "La tua risposta:",
+        "correctAnswer": "Risposta corretta:",
+        "close": "Chiudi",
+        "mistakesReview": "Revisione degli errori"
+    },
+    "feedback": {
+        "correct": ["Bravo! 🎉", "Eccellente! ⭐", "Corretto! 🌟", "Super! 🚀", "Fantastico! 💫"],
+        "incorrect": ["Sbagliato, ma stiamo imparando! 💪", "Non esatto, ecco la spiegazione. 📚", "Riguarda la spiegazione. 🤔"]
+    },
+    "settings": {
+        "title": "Impostazioni",
+        "language": "Lingua",
+        "sound": "Suono",
+        "soundOn": "Acceso",
+        "soundOff": "Spento",
+        "darkMode": "Modalità Scura",
+        "darkModeOn": "Accesa",
+        "darkModeOff": "Spenta",
+        "resetProgress": "Resetta il Progresso",
+        "resetConfirm": "Sei sicuro? Tutti i progressi saranno cancellati!",
+        "resetYes": "Sì, cancella",
+        "resetNo": "Annulla",
+        "about": "Informazioni",
+        "aboutText": "Calcolo Mentale è un gioco educativo per bambini. Insegna il calcolo mentale attraverso 12 fasi, dall'addizione alla moltiplicazione vicino al 10.",
+        "credits": "Autore: David Bekić-Skeji | 2025",
+        "readAloud": "Leggi le domande ad alta voce",
+        "parentDashboard": "Dashboard Genitori"
+    },
+    "achievement": {
+        "streak": "Serie di Fuoco! 🔥",
+        "streakMsg": "Hai risposto correttamente a {n} domande di fila!"
+    },
+    "phaseNames": {
+        "1": "Amici del Numero 10",
+        "2": "Addizione a Una Cifra",
+        "3": "Addizione Oltre il 10",
+        "4": "Sottrazione di Base",
+        "5": "Sottrazione come Distanza",
+        "6": "Addizione a Due Cifre",
+        "7": "Addizione per Arrotondamento",
+        "8": "Moltiplicazione come Gruppi",
+        "9": "Doppio, Metà, ×5 e ×10",
+        "10": "Condividere le Cose",
+        "11": "Divisione come Moltiplicazione Inversa",
+        "12": "Trucchi di Calcolo Veloce"
+    },
+    "days": ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"],
+    "months": ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"]
+}
