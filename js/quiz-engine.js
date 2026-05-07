@@ -55,7 +55,7 @@ Object.assign(App, {
     startDailyChallenge() {
         const today = new Date().toDateString();
         if (this.lastDailyDate === today && this.dailyCompleted) {
-            alert('Dnevni izazov je već dovršen! Vrati se sutra.');
+            this.showInfoModal('Dnevni izazov', 'Dnevni izazov je već dovršen! Vrati se sutra.');
             return;
         }
         
@@ -621,7 +621,8 @@ Object.assign(App, {
             nextBtn.style.display = 'none';
         }
         
-        // Achievement for streak
+        this._popupQueue = [];
+
         if (this.bestStreak >= 5) {
             setTimeout(() => {
                 this.showAchievement('Vatreni niz! 🔥', `Odgovorio/la si točno ${this.bestStreak} zadataka za redom!`);
@@ -631,7 +632,7 @@ Object.assign(App, {
         if (newlyUnlocked) {
             setTimeout(() => {
                 this.showPhaseUnlock(this.currentPhase + 1);
-            }, this.bestStreak >= 5 ? 2500 : 1000);
+            }, this.bestStreak >= 5 ? 1100 : 1000);
         }
         
         this.updateHeaderStats();

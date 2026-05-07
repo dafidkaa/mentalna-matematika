@@ -179,7 +179,8 @@
         grid-template-columns: repeat(2, 1fr);
     }
     .matching-container {
-        grid-template-columns: repeat(2, 1fr);
+        flex-direction: row;
+        gap: 1.5rem;
     }
     .quiz-main,
     .learn-main,

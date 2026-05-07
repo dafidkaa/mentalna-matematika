@@ -71,65 +71,89 @@ Object.assign(App, {
             } else {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 cancelAnimationFrame(animationId);
+                if (canvas.parentNode) canvas.parentNode.removeChild(canvas);
             }
         };
 
         animate();
     },
     
-    showAchievement(title, text) {
-        if (typeof SoundManager !== 'undefined') SoundManager.playAchievement();
-        const popup = document.getElementById('achievement-popup');
-        document.getElementById('achievement-title').textContent = title;
-        document.getElementById('achievement-text').textContent = text;
-        popup.classList.remove('hidden');
+    _popupQueue: [],
+
+    _processPopupQueue() {
+        if (this._popupQueue.length === 0) return;
+        const next = this._popupQueue.shift();
+        next();
     },
-    
+
+    showAchievement(title, text) {
+        const show = () => {
+            if (typeof SoundManager !== 'undefined') SoundManager.playAchievement();
+            const popup = document.getElementById('achievement-popup');
+            document.getElementById('achievement-title').textContent = title;
+            document.getElementById('achievement-text').textContent = text;
+            popup.classList.remove('hidden');
+        };
+        this._popupQueue.push(show);
+        this._processPopupQueue();
+    },
+
     closeAchievement() {
         document.getElementById('achievement-popup').classList.add('hidden');
+        this._processPopupQueue();
     },
 
     showPhaseUnlock(phaseIndex) {
         const phase = PHASES[phaseIndex];
         if (!phase) return;
 
-        if (typeof SoundManager !== 'undefined') SoundManager.playAchievement();
+        const show = () => {
+            if (typeof SoundManager !== 'undefined') SoundManager.playAchievement();
 
-        let popup = document.getElementById('phase-unlock-popup');
-        if (!popup) {
-            popup = document.createElement('div');
-            popup.id = 'phase-unlock-popup';
-            popup.className = 'popup hidden';
-            popup.setAttribute('role', 'dialog');
-            popup.setAttribute('aria-modal', 'true');
-            popup.innerHTML = `
-                <div class="popup-content phase-unlock-content">
-                    <div class="phase-unlock-sparkle" aria-hidden="true">✨🌟✨</div>
-                    <div class="phase-unlock-icon" id="phase-unlock-icon"></div>
-                    <h3 id="phase-unlock-title">Novi svijet otključan!</h3>
-                    <p id="phase-unlock-text"></p>
-                    <div class="phase-unlock-badge" id="phase-unlock-badge"></div>
-                    <button class="btn btn-primary" onclick="app.closePhaseUnlock()">Istraži! 🚀</button>
-                </div>
+            let popup = document.getElementById('phase-unlock-popup');
+            if (!popup) {
+                popup = document.createElement('div');
+                popup.id = 'phase-unlock-popup';
+                popup.className = 'popup hidden';
+                popup.setAttribute('role', 'dialog');
+                popup.setAttribute('aria-modal', 'true');
+                popup.innerHTML = `
+                    <div class="popup-content phase-unlock-content">
+                        <div class="phase-unlock-sparkle" aria-hidden="true">✨🌟✨</div>
+                        <div class="phase-unlock-icon" id="phase-unlock-icon"></div>
+                        <h3 id="phase-unlock-title">Novi svijet otključan!</h3>
+                        <p id="phase-unlock-text"></p>
+                        <div class="phase-unlock-badge" id="phase-unlock-badge"></div>
+                        <button class="btn btn-primary" onclick="app.closePhaseUnlock(true)">Istraži! 🚀</button>
+                    </div>
+                `;
+                document.getElementById('app').appendChild(popup);
+            }
+
+            document.getElementById('phase-unlock-icon').textContent = phase.icon;
+            document.getElementById('phase-unlock-title').textContent = 'Novi svijet otključan! 🎉';
+            document.getElementById('phase-unlock-text').textContent = `Otključao/la si svijet "${phase.title}"!`;
+            document.getElementById('phase-unlock-badge').innerHTML = `
+                <span style="background:${phase.color};color:white;padding:0.3rem 1rem;border-radius:var(--radius-sm);font-weight:800;font-size:1.1rem;">
+                    ${phase.icon} ${phase.title}
+                </span>
             `;
-            document.getElementById('app').appendChild(popup);
-        }
-
-        document.getElementById('phase-unlock-icon').textContent = phase.icon;
-        document.getElementById('phase-unlock-title').textContent = 'Novi svijet otključan! 🎉';
-        document.getElementById('phase-unlock-text').textContent = `Otključao/la si svijet "${phase.title}"!`;
-        document.getElementById('phase-unlock-badge').innerHTML = `
-            <span style="background:${phase.color};color:white;padding:0.3rem 1rem;border-radius:var(--radius-sm);font-weight:800;font-size:1.1rem;">
-                ${phase.icon} ${phase.title}
-            </span>
-        `;
-        popup.classList.remove('hidden');
-        this.fireConfetti();
+            this._unlockedPhaseIndex = phaseIndex;
+            popup.classList.remove('hidden');
+            this.fireConfetti();
+        };
+        this._popupQueue.push(show);
+        this._processPopupQueue();
     },
 
-    closePhaseUnlock() {
+    closePhaseUnlock(navigate) {
         const popup = document.getElementById('phase-unlock-popup');
         if (popup) popup.classList.add('hidden');
+        if (navigate && this._unlockedPhaseIndex != null) {
+            this.openPhase(this._unlockedPhaseIndex);
+            this._unlockedPhaseIndex = null;
+        }
+        this._processPopupQueue();
     },
 
     showReviewMistakes() {

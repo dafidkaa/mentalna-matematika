@@ -1,4 +1,30 @@
 Object.assign(App, {
+    showInfoModal(title, text) {
+        document.getElementById('info-modal-title').textContent = title;
+        document.getElementById('info-modal-text').textContent = text;
+        document.getElementById('info-modal').classList.remove('hidden');
+    },
+
+    hideInfoModal() {
+        document.getElementById('info-modal').classList.add('hidden');
+    },
+
+    showDangerModal(title, text, confirmLabel, onConfirm) {
+        document.getElementById('danger-modal-title').textContent = title;
+        document.getElementById('danger-modal-text').textContent = text;
+        const btn = document.getElementById('danger-modal-confirm');
+        btn.textContent = confirmLabel;
+        btn.onclick = () => {
+            this.hideDangerModal();
+            onConfirm();
+        };
+        document.getElementById('danger-modal').classList.remove('hidden');
+    },
+
+    hideDangerModal() {
+        document.getElementById('danger-modal').classList.add('hidden');
+    },
+
     openSettings() {
         const langSelect = document.getElementById('lang-select');
         if (langSelect && typeof I18n !== 'undefined') {
@@ -60,26 +86,31 @@ Object.assign(App, {
     },
 
     confirmResetProgress() {
-        if (confirm('Jesi li siguran/na? Sav napredak će biti izbrisan!')) {
-            try { localStorage.removeItem('mentalMathProgress'); } catch(e) {}
-            PHASES.forEach((phase, i) => {
-                phase.completed = 0;
-                phase.stars = 0;
-                phase.unlocked = i === 0;
-                phase.learned = false;
-            });
-            this.dailyCompleted = false;
-            this.lastDailyDate = null;
-            this.renderPhases();
-            this.updateHeaderStats();
-            if (typeof SoundManager !== 'undefined') SoundManager.playClick();
-        }
+        this.showDangerModal(
+            'Resetiraj napredak',
+            'Jesi li siguran/na? Sav napredak će biti izbrisan!',
+            'Izbriši',
+            () => {
+                try { localStorage.removeItem('mentalMathProgress'); } catch(e) {}
+                PHASES.forEach((phase, i) => {
+                    phase.completed = 0;
+                    phase.stars = 0;
+                    phase.unlocked = i === 0;
+                    phase.learned = false;
+                });
+                this.dailyCompleted = false;
+                this.lastDailyDate = null;
+                this.renderPhases();
+                this.updateHeaderStats();
+                if (typeof SoundManager !== 'undefined') SoundManager.playClick();
+            }
+        );
     },
 
     exportProgress() {
         try {
             const data = localStorage.getItem('mentalMathProgress');
-            if (!data) { alert('Nema spremljenog napretka.'); return; }
+            if (!data) { this.showInfoModal('Napredak', 'Nema spremljenog napretka.'); return; }
             const blob = new Blob([data], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');

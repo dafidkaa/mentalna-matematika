@@ -96,6 +96,14 @@ const MobileEnhancements = {
         }
     },
 
+    isVisible(el) {
+        if (!el) return false;
+        if (el.classList.contains('hidden')) return false;
+        if (el.style.display === 'none') return false;
+        if (el.offsetParent === null) return false;
+        return true;
+    },
+
     onSwipeLeft() {
         // Swipe left = next (like turning a page)
         const activeScreen = document.querySelector('.screen.active');
@@ -103,21 +111,21 @@ const MobileEnhancements = {
 
         if (activeScreen.id === 'quiz-screen') {
             const nextBtn = document.getElementById('btn-next');
-            if (nextBtn && !nextBtn.classList.contains('hidden')) {
+            if (this.isVisible(nextBtn)) {
                 nextBtn.click();
             } else {
                 const submitBtn = document.getElementById('btn-submit');
-                if (submitBtn && !submitBtn.classList.contains('hidden')) {
+                if (this.isVisible(submitBtn)) {
                     submitBtn.click();
                 }
             }
         } else if (activeScreen.id === 'learn-screen') {
             const nextBtn = document.getElementById('learn-btn-next');
-            if (nextBtn && !nextBtn.classList.contains('hidden')) {
+            if (this.isVisible(nextBtn)) {
                 nextBtn.click();
             } else {
                 const finishBtn = document.getElementById('learn-btn-finish');
-                if (finishBtn && !finishBtn.classList.contains('hidden')) {
+                if (this.isVisible(finishBtn)) {
                     finishBtn.click();
                 }
             }
@@ -135,7 +143,7 @@ const MobileEnhancements = {
             if (backBtn) backBtn.click();
         } else if (activeScreen.id === 'learn-screen') {
             const prevBtn = document.getElementById('learn-btn-prev');
-            if (prevBtn && !prevBtn.classList.contains('hidden')) {
+            if (this.isVisible(prevBtn)) {
                 prevBtn.click();
             } else {
                 const backBtn = activeScreen.querySelector('.btn-back');

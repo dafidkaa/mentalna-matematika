@@ -333,7 +333,7 @@
                     <button class="btn btn-secondary" onclick="app.goHome()">
                         <i class="fas fa-home"></i> Početna
                     </button>
-                    <button class="btn btn-secondary" id="btn-next-phase" onclick="app.nextPhase()">
+                    <button class="btn btn-next-phase" id="btn-next-phase" onclick="app.nextPhase()">
                         Sljedeći svijet <i class="fas fa-arrow-right"></i>
                     </button>
                 </div>
@@ -366,6 +366,29 @@
                 <div class="modal-actions">
                     <button class="btn btn-secondary" onclick="app.hideConfirm()">Nastavi</button>
                     <button class="btn btn-primary" onclick="app.quitQuiz()">Završi</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Modal (replaces alert()) -->
+        <div id="info-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="info-modal-title">
+            <div class="modal-content">
+                <h3 id="info-modal-title"></h3>
+                <p id="info-modal-text"></p>
+                <div class="modal-actions">
+                    <button class="btn btn-primary" onclick="app.hideInfoModal()">U redu</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Danger Confirm Modal (replaces confirm()) -->
+        <div id="danger-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="danger-modal-title">
+            <div class="modal-content">
+                <h3 id="danger-modal-title"></h3>
+                <p id="danger-modal-text"></p>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" onclick="app.hideDangerModal()">Odustani</button>
+                    <button class="btn btn-danger" id="danger-modal-confirm"></button>
                 </div>
             </div>
         </div>
