@@ -15,16 +15,17 @@ Object.assign(App, {
         const baseCount = mode === 'speed' ? 10 : (mode === 'steps' ? 5 : 10);
         const count = this.getAdaptiveQuestionCount(this.currentPhase, baseCount);
         
-        // Generate questions
         this.questions = phase.generateQuestions(count);
         
-        // Setup UI
-        document.getElementById('quiz-phase-name').textContent = phase.title;
+        const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
+        const pd = (key) => t(`phaseData.${this.currentPhase + 1}.${key}`);
+        
+        document.getElementById('quiz-phase-name').textContent = pd('title') || phase.title;
         document.getElementById('quiz-mode-name').textContent = 
-            mode === 'practice' ? 'Vježba' : 
-            mode === 'quiz' ? 'Kviz' : 
-            mode === 'speed' ? 'Brzinski' : 
-            mode === 'steps' ? 'Korak po korak' : 'Dnevni izazov';
+            mode === 'practice' ? t('quiz.practice') : 
+            mode === 'quiz' ? t('modes.quiz') : 
+            mode === 'speed' ? t('modes.speed') : 
+            mode === 'steps' ? t('quiz.stepsMode') : t('quiz.daily');
         
         document.getElementById('total-q').textContent = count;
         document.getElementById('current-q').textContent = 1;
@@ -54,8 +55,9 @@ Object.assign(App, {
     
     startDailyChallenge() {
         const today = new Date().toDateString();
+        const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
         if (this.lastDailyDate === today && this.dailyCompleted) {
-            this.showInfoModal('Dnevni izazov', 'Dnevni izazov je već dovršen! Vrati se sutra.');
+            this.showInfoModal(t('home.dailyChallenge'), t('home.dailyDoneDesc'));
             return;
         }
         
@@ -97,11 +99,11 @@ Object.assign(App, {
         
         // Type badge
         const typeLabels = {
-            fill_blank: 'Dopuni prazninu',
-            mcq: 'Odaberi odgovor',
-            matching: 'Spoji parove',
-            visual: 'Vizualno',
-            steps: 'Korak po korak'
+            fill_blank: typeof I18n !== 'undefined' ? I18n.t('quiz.fillBlank') : 'Dopuni prazninu',
+            mcq: typeof I18n !== 'undefined' ? I18n.t('quiz.mcq') : 'Odaberi odgovor',
+            matching: typeof I18n !== 'undefined' ? I18n.t('quiz.matching') : 'Spoji parove',
+            visual: typeof I18n !== 'undefined' ? I18n.t('quiz.visual') : 'Vizualno',
+            steps: typeof I18n !== 'undefined' ? I18n.t('quiz.stepsMode') : 'Korak po korak'
         };
         document.getElementById('question-type-badge').textContent = typeLabels[q.type] || 'Pitanje';
         
@@ -227,7 +229,7 @@ Object.assign(App, {
                 // Add check button for matching
                 const checkBtn = document.createElement('button');
                 checkBtn.className = 'btn btn-primary btn-submit';
-                checkBtn.textContent = 'Provjeri spojeve';
+                checkBtn.textContent = typeof I18n !== 'undefined' ? I18n.t('quiz.check') : 'Provjeri spojeve';
                 checkBtn.style.marginTop = '1rem';
                 checkBtn.onclick = () => this.submitAnswer();
                 answerEl.appendChild(checkBtn);
@@ -508,18 +510,20 @@ Object.assign(App, {
     showFeedback(isCorrect, explanation) {
         const area = document.getElementById('feedback-area');
         const content = document.getElementById('feedback-content');
+        const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
         
-        const messages = isCorrect ? [
-            'Bravo! 🎉',
-            'Odlično! ⭐',
-            'Točno! 🌟',
-            'Super! 🚀',
-            'Sjajno! 💫'
-        ] : [
-            'Pogrešno, ali učimo se! 💪',
-            'Nije točno, evo objašnjenja. 📚',
-            'Još jednom pogledaj objašnjenje. 🤔'
-        ];
+        let messages;
+        if (typeof I18n !== 'undefined' && I18n.translations[I18n.currentLang]) {
+            const fb = I18n.t('feedback.correct');
+            const fi = I18n.t('feedback.incorrect');
+            messages = isCorrect ? (Array.isArray(fb) ? fb : [fb]) : (Array.isArray(fi) ? fi : [fi]);
+        } else {
+            messages = isCorrect ? [
+                'Bravo! 🎉', 'Odlično! ⭐', 'Točno! 🌟', 'Super! 🚀', 'Sjajno! 💫'
+            ] : [
+                'Pogrešno, ali učimo se! 💪', 'Nije točno, evo objašnjenja. 📚', 'Još jednom pogledaj objašnjenje. 🤔'
+            ];
+        }
         
         const msg = pickRandom(messages);
         
@@ -579,23 +583,25 @@ Object.assign(App, {
         const msgEl = document.getElementById('results-message');
         const iconEl = document.getElementById('results-icon');
         
+        const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
+
         if (pct >= 0.9) {
-            titleEl.textContent = 'Bravo, majstore!';
-            msgEl.textContent = 'Savršeno! Razumiješ ovu fazu izvrsno!';
+            titleEl.textContent = t('results.bravo');
+            msgEl.textContent = t('results.bravoMsg');
             iconEl.textContent = '🏆';
             this.fireConfetti();
         } else if (pct >= 0.6) {
-            titleEl.textContent = 'Odlično!';
-            msgEl.textContent = 'Vrlo dobro! Samo nastavi vježbati!';
+            titleEl.textContent = t('results.great');
+            msgEl.textContent = t('results.greatMsg');
             iconEl.textContent = '⭐';
             this.fireConfetti();
         } else if (pct >= 0.3) {
-            titleEl.textContent = 'Dobar posao!';
-            msgEl.textContent = 'Učiš! Ponovi ovu fazu za bolji rezultat.';
+            titleEl.textContent = t('results.good');
+            msgEl.textContent = t('results.goodMsg');
             iconEl.textContent = '👍';
         } else {
-            titleEl.textContent = 'Nema veze!';
-            msgEl.textContent = 'Svaki pokušaj je učenje. Probaj ponovo!';
+            titleEl.textContent = t('results.tryAgain');
+            msgEl.textContent = t('results.tryAgainMsg');
             iconEl.textContent = '💪';
         }
         
@@ -624,8 +630,11 @@ Object.assign(App, {
         this._popupQueue = [];
 
         if (this.bestStreak >= 5) {
+            const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
+            const streakTitle = t('achievement.streak');
+            const streakMsg = t('achievement.streakMsg').replace('{n}', this.bestStreak);
             setTimeout(() => {
-                this.showAchievement('Vatreni niz! 🔥', `Odgovorio/la si točno ${this.bestStreak} zadataka za redom!`);
+                this.showAchievement(streakTitle, streakMsg);
             }, 1000);
         }
 

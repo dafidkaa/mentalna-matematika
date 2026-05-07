@@ -4,7 +4,9 @@ Object.assign(App, {
 
     startLearn() {
         const phase = PHASES[this.currentPhase];
-        document.getElementById('learn-phase-title').textContent = phase.title;
+        const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
+        const pd = (key) => t(`phaseData.${this.currentPhase + 1}.${key}`);
+        document.getElementById('learn-phase-title').textContent = pd('title') || phase.title;
         
         // Generate learn steps based on phase
         this.learnSteps = this.generateLearnSteps(this.currentPhase);

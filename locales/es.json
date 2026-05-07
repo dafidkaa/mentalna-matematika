@@ -3,7 +3,9 @@
         "title": "Cálculo Mental",
         "subtitle": "Aprender Jugando",
         "tagline": "Para niños y padres",
-        "footer": "10-15 minutos al día • Sin presión • Siempre termina con una victoria"
+        "footer": "10-15 minutos al día • Sin presión • Siempre termina con una victoria",
+        "splashQuote1": "Primero haz un número bonito,",
+        "splashQuote2": "luego ajusta."
     },
     "nav": {
         "back": "Atrás",
@@ -110,7 +112,19 @@
         "aboutText": "Cálculo Mental es un juego educativo para niños. Enseña cálculo mental a través de 12 fases, desde la suma hasta la multiplicación cerca de 10.",
         "credits": "Autor: David Bekić-Skeji | 2025",
         "readAloud": "Leer preguntas en voz alta",
-        "parentDashboard": "Panel de Padres"
+        "parentDashboard": "Panel de Padres",
+        "soundAndAudio": "Sonido y audio",
+        "appearance": "Apariencia",
+        "progressSection": "Progreso",
+        "data": "Datos",
+        "resetAllProgress": "Resetear todo el progreso",
+        "deleteAllProgress": "Borrar todo el progreso",
+        "exportProgress": "Exportar progreso",
+        "selectLanguage": "Seleccionar idioma",
+        "sounds": "Sonidos",
+        "darkModeToggle": "Modo Oscuro",
+        "version": "Cálculo Mental v1.0",
+        "educationalGame": "Juego educativo para niños"
     },
     "achievement": {
         "streak": "¡Racha de Fuego! 🔥",
@@ -129,6 +143,109 @@
         "10": "Compartir Cosas",
         "11": "División como Multiplicación Inversa",
         "12": "Trucos de Cálculo Rápido"
+    },
+    "phaseData": {
+        "1": {
+            "title": "Amigos del Número 10",
+            "subtitle": "Aprende qué números hacen 10",
+            "idea": "El número 10 es el primer gran 'número bonito'. Si sabes qué combinaciones dan 10, sumar, restar, multiplicar y dividir será mucho más fácil.",
+            "mantra": "Los números tienen amigos. Cuando dos amigos se unen, obtenemos el número bonito 10.",
+            "parentTip": "Usa bloques Lego, caramelos, piedritas o dedos. Si el niño adivina, vuelve a los objetos físicos."
+        },
+        "2": {
+            "title": "Suma de Una Cifra",
+            "subtitle": "Suma sin contar desde 1",
+            "idea": "Mantén el número mayor en tu cabeza y añade el menor. No necesitas contar desde el principio cada vez.",
+            "mantra": "Mantén el mayor, añade el menor.",
+            "parentTip": "Pregunta: '¿Qué es más fácil: contar todo desde el principio o mantener el número mayor en la cabeza?'"
+        },
+        "3": {
+            "title": "Suma Más Allá de 10",
+            "subtitle": "Haz 10, luego continúa",
+            "idea": "Cuando un número está cerca de 10, ayúdalo a llegar a 10. Entonces el cálculo es más fácil.",
+            "mantra": "Llega a 10, luego continúa.",
+            "parentTip": "Pregunta importante: '¿Cómo lo supiste?' El niño debe poder decir: 'Hice 10.'"
+        },
+        "4": {
+            "title": "Resta Básica",
+            "subtitle": "Quita una parte, mira lo que queda",
+            "idea": "Restar significa: tengo algo, quito una parte, veo cuánto queda.",
+            "mantra": "Quita una parte, mira lo que queda.",
+            "parentTip": "Pon bloques en la mesa, quita algunos, pregunta cuántos quedan. Conecta con la suma: si 6 + 4 = 10, entonces 10 - 6 = 4."
+        },
+        "5": {
+            "title": "Resta como Distancia",
+            "subtitle": "Salta a 10, luego al objetivo",
+            "idea": "A veces no necesitamos mover nada. Solo miramos qué tan lejos está un número del otro.",
+            "mantra": "Salta a 10, luego al objetivo.",
+            "parentTip": "Para 13 - 8: '¿Qué tan lejos está del 8 al 13?' Del 8 al 10 son 2, del 10 al 13 son 3, total 5."
+        },
+        "6": {
+            "title": "Suma de Dos Cifras",
+            "subtitle": "Primero las decenas, luego las unidades",
+            "idea": "Un número de dos cifras tiene una parte grande (decenas) y una parte pequeña (unidades). Primero combinamos las partes grandes, luego las pequeñas.",
+            "mantra": "Primero las decenas, luego las unidades.",
+            "parentTip": "Para 42 + 35: primero 40 + 30 = 70, luego 2 + 5 = 7, total 77. Para el cerebro es más natural saber primero aproximadamente dónde está la respuesta."
+        },
+        "7": {
+            "title": "Suma por Redondeo",
+            "subtitle": "Da un poco a un número para que sea bonito",
+            "idea": "Convierte un número en un número bonito (20, 30, 40, 50) y ajusta el otro. No es trampa, ¡es calcular de forma inteligente!",
+            "mantra": "Da un poco a un número para que sea bonito.",
+            "parentTip": "Para 29 + 16: 29 necesita 1 para llegar a 30. Tomamos 1 de 16, queda 15. 30 + 15 = 45. Esto enseña al niño a ver los números como flexibles."
+        },
+        "8": {
+            "title": "Multiplicación como Grupos",
+            "subtitle": "Grupos iguales",
+            "idea": "La multiplicación no es una tabla para memorizar. La multiplicación significa: varios grupos iguales.",
+            "mantra": "La multiplicación son grupos iguales.",
+            "parentTip": "Usa platos y galletas. 'Si tenemos 3 platos y 4 galletas en cada plato, ¿cuántas galletas tenemos?'"
+        },
+        "9": {
+            "title": "Doble, Mitad, ×5 y ×10",
+            "subtitle": "Multiplicación inteligente",
+            "idea": "Algunas tablas no necesitan memorizarse. Se pueden entender doblando, partiendo a la mitad y usando decenas.",
+            "mantra": "×2 es el doble. ×4 es doble-doble. ×5 es la mitad de ×10. ×10 es fácil.",
+            "parentTip": "Para 7 × 5: primero 7 × 10 = 70, luego la mitad de 70 es 35. El niño ve que la multiplicación no es magia."
+        },
+        "10": {
+            "title": "Compartir Cosas",
+            "subtitle": "Comparte justamente",
+            "idea": "Dividir significa: tenemos algo y lo compartimos justamente. Todos reciben lo mismo.",
+            "mantra": "Comparte justamente.",
+            "parentTip": "Pon 12 bloques y 3 platos. El niño coloca bloques uno por uno hasta que todos los platos tengan la misma cantidad."
+        },
+        "11": {
+            "title": "División como Multiplicación Inversa",
+            "subtitle": "Si conozco la multiplicación, conozco la división",
+            "idea": "La división y la multiplicación están conectadas. Una familia de números da 4 cálculos.",
+            "mantra": "Si conozco la multiplicación, conozco la división.",
+            "parentTip": "Familia de números: 3, 4, 12. De ellos: 3×4=12, 4×3=12, 12÷3=4, 12÷4=3. Esto desarrolla una comprensión profunda."
+        },
+        "12": {
+            "title": "Trucos de Cálculo Rápido",
+            "subtitle": "Multiplicación cerca de 10",
+            "idea": "Cuando multiplicamos números cerca de 10, preguntamos: '¿Cuánto falta para 10?' Restamos cruzado y multiplicamos los números pequeños.",
+            "mantra": "¿Cuánto falta para 10? Resta cruzado. Multiplica los números pequeños.",
+            "parentTip": "¡NO enseñar esto demasiado pronto! El niño debe primero entender 'cuánto falta para 10'. Para 8×9: 8 necesita 2, 9 necesita 1. 8-1=7, 2×1=2. Respuesta: 72."
+        }
+    },
+    "dashboard": {
+        "title": "Panel de Padres",
+        "totalStars": "Estrellas totales",
+        "totalCompleted": "Tareas completadas",
+        "bestStreak": "Mejor racha",
+        "phasesUnlocked": "Mundos desbloqueados",
+        "phaseProgress": "Progreso por fases",
+        "progressOverTime": "Progreso a lo largo del tiempo",
+        "weakAreas": "Áreas débiles",
+        "weakSuggestion": "¡Practica más!",
+        "allGood": "¡Cada fase abierta tiene 2+ estrellas! 🎉",
+        "noData": "Habrá suficientes datos después de algunos días de juego."
+    },
+    "info": {
+        "ok": "OK",
+        "cancel": "Cancelar"
     },
     "days": ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
     "months": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]

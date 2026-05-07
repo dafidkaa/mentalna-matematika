@@ -1,5 +1,6 @@
 Object.assign(App, {
     showInfoModal(title, text) {
+        const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
         document.getElementById('info-modal-title').textContent = title;
         document.getElementById('info-modal-text').textContent = text;
         document.getElementById('info-modal').classList.remove('hidden');
@@ -86,10 +87,11 @@ Object.assign(App, {
     },
 
     confirmResetProgress() {
+        const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
         this.showDangerModal(
-            'Resetiraj napredak',
-            'Jesi li siguran/na? Sav napredak će biti izbrisan!',
-            'Izbriši',
+            t('settings.resetProgress'),
+            t('settings.resetConfirm'),
+            t('settings.resetYes'),
             () => {
                 try { localStorage.removeItem('mentalMathProgress'); } catch(e) {}
                 PHASES.forEach((phase, i) => {
@@ -110,7 +112,11 @@ Object.assign(App, {
     exportProgress() {
         try {
             const data = localStorage.getItem('mentalMathProgress');
-            if (!data) { this.showInfoModal('Napredak', 'Nema spremljenog napretka.'); return; }
+            if (!data) {
+                const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
+                this.showInfoModal(t('settings.exportProgress'), t('dashboard.noData'));
+                return;
+            }
             const blob = new Blob([data], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');

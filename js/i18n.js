@@ -49,7 +49,16 @@ const I18n = {
             if (obj && obj[k] !== undefined) {
                 obj = obj[k];
             } else {
-                return key;
+                const hr = this.translations['hr'];
+                let fallback = hr;
+                for (const fk of keys) {
+                    if (fallback && fallback[fk] !== undefined) {
+                        fallback = fallback[fk];
+                    } else {
+                        return key;
+                    }
+                }
+                return fallback;
             }
         }
         return obj;
@@ -60,7 +69,41 @@ const I18n = {
             this.currentLang = lang;
             localStorage.setItem('mentalMathLang', lang);
             await this.loadTranslations(lang);
+            this.applyToDOM();
+            if (typeof App !== 'undefined') {
+                App.renderPhases();
+                App.updateHeaderStats();
+            }
         }
+    },
+
+    applyToDOM() {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            const val = this.t(key);
+            if (val && val !== key) el.textContent = val;
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            const val = this.t(key);
+            if (val && val !== key) el.placeholder = val;
+        });
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+            const key = el.getAttribute('data-i18n-html');
+            const val = this.t(key);
+            if (val && val !== key) el.innerHTML = val;
+        });
+        document.querySelectorAll('[data-i18n-title]').forEach(el => {
+            const key = el.getAttribute('data-i18n-title');
+            const val = this.t(key);
+            if (val && val !== key) el.title = val;
+        });
+        document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+            const key = el.getAttribute('data-i18n-aria');
+            const val = this.t(key);
+            if (val && val !== key) el.setAttribute('aria-label', val);
+        });
+        document.documentElement.lang = this.currentLang;
     },
 
     getCurrentLang() {

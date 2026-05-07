@@ -3,7 +3,9 @@
         "title": "Mentalna Matematika",
         "subtitle": "Učenje kroz Igru",
         "tagline": "Za djecu i roditelje",
-        "footer": "10-15 minuta dnevno • Bez forsiranja • Uvijek završi s pobjedom"
+        "footer": "10-15 minuta dnevno • Bez forsiranja • Uvijek završi s pobjedom",
+        "splashQuote1": "Prvo napravi lijep broj,",
+        "splashQuote2": "onda popravi."
     },
     "nav": {
         "back": "Nazad",
@@ -110,7 +112,19 @@
         "aboutText": "Mentalna Matematika je obrazovna igra za djecu. Uči mentalno računanje kroz 12 faza, od sabiranja do množenja blizu 10.",
         "credits": "Autor: David Bekić-Skeji | 2025",
         "readAloud": "Čitaj pitanja naglas",
-        "parentDashboard": "Roditeljski dashboard"
+        "parentDashboard": "Roditeljski dashboard",
+        "soundAndAudio": "Zvuk i audio",
+        "appearance": "Izgled",
+        "progressSection": "Napredak",
+        "data": "Podaci",
+        "resetAllProgress": "Resetuj sav napredak",
+        "deleteAllProgress": "Izbriši sav napredak",
+        "exportProgress": "Izvezi napredak",
+        "selectLanguage": "Odaberi jezik",
+        "sounds": "Zvukovi",
+        "darkModeToggle": "Tamni način",
+        "version": "Mentalna Matematika v1.0",
+        "educationalGame": "Obrazovna igra za djecu"
     },
     "achievement": {
         "streak": "Vatreni niz! 🔥",
@@ -129,6 +143,109 @@
         "10": "Dijeljenje stvari",
         "11": "Dijeljenje kao obrnuto množenje",
         "12": "Speed math trikovi"
+    },
+    "phaseData": {
+        "1": {
+            "title": "Prijatelji broja 10",
+            "subtitle": "Nauči koji brojevi čine 10",
+            "idea": "Broj 10 je prvi veliki 'lijepi broj'. Ako znaš koje kombinacije daju 10, mnogo lakše ćeš sabirati, oduzimati, množiti i dijeliti.",
+            "mantra": "Brojevi imaju prijatelje. Kada se dva prijatelja spoje, dobijemo lijepi broj 10.",
+            "parentTip": "Koristite Lego kockice, bombone, kamenčiće ili prste. Ako dijete pogađa, vratite se na predmete."
+        },
+        "2": {
+            "title": "Jednocifreno sabiranje",
+            "subtitle": "Sabiraj bez brojanja od 1",
+            "idea": "Zadrži veći broj u glavi i dodaj manji. Ne moraš brojati svaki put od početka.",
+            "mantra": "Zadrži veći broj, dodaj manji.",
+            "parentTip": "Pitajte: 'Šta je lakše: brojati sve od početka ili zadržati veći broj u glavi?'"
+        },
+        "3": {
+            "title": "Sabiranje preko 10",
+            "subtitle": "Napravi 10, pa nastavi",
+            "idea": "Kad je broj blizu 10, pomogni mu da postane 10. Onda je račun lakši.",
+            "mantra": "Dođi do 10, pa nastavi.",
+            "parentTip": "Važno pitanje: 'Kako si to znao?' Dijete treba da može reći: 'Napravio sam 10.'"
+        },
+        "4": {
+            "title": "Osnovno oduzimanje",
+            "subtitle": "Makni dio, vidi ostatak",
+            "idea": "Oduzimanje znači: imam nešto, maknem dio, vidim koliko ostaje.",
+            "mantra": "Makni dio, vidi ostatak.",
+            "parentTip": "Stavite kockice na sto, maknite nekoliko, pitajte koliko je ostalo. Povežite sa sabiranjem: ako je 6 + 4 = 10, onda je 10 - 6 = 4."
+        },
+        "5": {
+            "title": "Oduzimanje kao udaljenost",
+            "subtitle": "Skoči do 10, pa do cilja",
+            "idea": "Ponekad ne moramo ništa micati. Samo gledamo koliko je jedan broj daleko od drugog.",
+            "mantra": "Skoči do 10, pa do cilja.",
+            "parentTip": "Za 13 - 8: 'Koliko je daleko od 8 do 13?' 8 do 10 je 2, 10 do 13 je 3, ukupno 5."
+        },
+        "6": {
+            "title": "Dvocifreno sabiranje",
+            "subtitle": "Prvo desetice, onda jedinice",
+            "idea": "Dvocifreni broj ima veliki dio (desetice) i mali dio (jedinice). Prvo spojimo velike dijelove, onda male.",
+            "mantra": "Prvo desetice, onda jedinice.",
+            "parentTip": "Za 42 + 35: prvo 40 + 30 = 70, onda 2 + 5 = 7, ukupno 77. Za mozak je prirodnije prvo znati otprilike gdje je odgovor."
+        },
+        "7": {
+            "title": "Sabiranje zaokruživanjem",
+            "subtitle": "Daj malo jednom broju da postane lijep",
+            "idea": "Jedan broj pretvori u lijepi broj (20, 30, 40, 50), a drugi prilagodi. To nije varanje, to je pametno računanje!",
+            "mantra": "Daj malo jednom broju da postane lijep.",
+            "parentTip": "Za 29 + 16: 29 treba 1 do 30. Uzmemo 1 od 16, ostane 15. 30 + 15 = 45. Ovo uči dijete da brojeve vidi kao fleksibilne."
+        },
+        "8": {
+            "title": "Množenje kao grupe",
+            "subtitle": "Jednake skupine",
+            "idea": "Množenje nije tablica koju treba bubati napamet. Množenje znači: više jednakih grupa.",
+            "mantra": "Množenje su jednake grupe.",
+            "parentTip": "Koristite tanjire i kekse. 'Ako imamo 3 tanjura i na svakom tanjuru su 4 keksa, koliko keksa imamo?'"
+        },
+        "9": {
+            "title": "Duplo, pola, ×5 i ×10",
+            "subtitle": "Pametno množenje",
+            "idea": "Neke tablice ne treba bubati. Mogu se razumjeti kroz duplanje, polovinu i desetice.",
+            "mantra": "×2 je duplo. ×4 je duplo-duplo. ×5 je pola od ×10. ×10 je lako.",
+            "parentTip": "Za 7 × 5: prvo 7 × 10 = 70, pa pola od 70 je 35. Dijete vidi da množenje nije magija."
+        },
+        "10": {
+            "title": "Dijeljenje stvari",
+            "subtitle": "Podijeli pravedno",
+            "idea": "Dijeljenje znači: imamo nešto i pravedno dijelimo. Svi dobiju jednako.",
+            "mantra": "Podijeli pravedno.",
+            "parentTip": "Stavite 12 kockica i 3 tanjura. Dijete stavlja kockice jedan po jedan dok svi tanjuri ne dobiju jednako."
+        },
+        "11": {
+            "title": "Dijeljenje kao obrnuto množenje",
+            "subtitle": "Ako znam množenje, znam i dijeljenje",
+            "idea": "Dijeljenje i množenje su povezani. Jedna porodica brojeva daje 4 računa.",
+            "mantra": "Ako znam množenje, znam i dijeljenje.",
+            "parentTip": "Porodica brojeva: 3, 4, 12. Od njih: 3×4=12, 4×3=12, 12÷3=4, 12÷4=3. To razvija duboko razumijevanje."
+        },
+        "12": {
+            "title": "Speed math trikovi",
+            "subtitle": "Množenje blizu 10",
+            "idea": "Kad množimo brojeve blizu 10, pitamo: 'Koliko fali do 10?' Oduzmemo ukriž, pomnožimo male brojeve.",
+            "mantra": "Koliko fali do 10? Oduzmi ukriž. Pomnoži male brojeve.",
+            "parentTip": "NE učiti ovo prerano! Dijete mora prvo razumjeti 'koliko fali do 10'. Za 8×9: 8 treba 2, 9 treba 1. 8-1=7, 2×1=2. Odgovor: 72."
+        }
+    },
+    "dashboard": {
+        "title": "Roditeljski dashboard",
+        "totalStars": "Ukupno zvjezdica",
+        "totalCompleted": "Zadataka riješeno",
+        "bestStreak": "Najbolji niz",
+        "phasesUnlocked": "Otključanih svjetova",
+        "phaseProgress": "Napredak po fazama",
+        "progressOverTime": "Napredak kroz vrijeme",
+        "weakAreas": "Slaba područja",
+        "weakSuggestion": "Vježbaj više!",
+        "allGood": "Svaka otvorena faza ima 2+ zvjezdice! 🎉",
+        "noData": "Dovoljno podataka će biti nakon nekoliko dana igranja."
+    },
+    "info": {
+        "ok": "U redu",
+        "cancel": "Odustani"
     },
     "days": ["Nedjelja", "Ponedjeljak", "Utorak", "Srijeda", "Četvrtak", "Petak", "Subota"],
     "months": ["Januar", "Februar", "Mart", "April", "Maj", "Jun", "Jul", "Avgust", "Septembar", "Oktobar", "Novembar", "Decembar"]

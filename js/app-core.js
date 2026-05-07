@@ -25,10 +25,12 @@ const App = {
             quiz: document.getElementById('quiz-screen'),
             results: document.getElementById('results-screen'),
             learn: document.getElementById('learn-screen'),
-            settings: document.getElementById('settings-screen')
+            settings: document.getElementById('settings-screen'),
+            dashboard: document.getElementById('dashboard-screen')
         };
 
         this.loadProgress();
+        if (typeof I18n !== 'undefined') I18n.applyToDOM();
         this.startSplash();
         this.setupEventListeners();
         this.renderPhases();
@@ -72,19 +74,22 @@ const App = {
     renderPhases() {
         const grid = document.getElementById('phases-grid');
         grid.innerHTML = '';
+        const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
 
         PHASES.forEach((phase, index) => {
             const card = document.createElement('div');
             card.className = `phase-card ${phase.unlocked ? '' : 'locked'}`;
 
             const progress = Math.min(100, (phase.completed / phase.total) * 100);
+            const phaseTitle = t(`phaseData.${index + 1}.title`) || phase.title;
+            const phaseSubtitle = t(`phaseData.${index + 1}.subtitle`) || phase.subtitle;
 
             card.innerHTML = `
                 <div class="phase-card-header">
                     <div class="phase-number" style="background: ${phase.color}">${phase.id}</div>
-                    <div class="phase-card-title">${phase.title}</div>
+                    <div class="phase-card-title">${phaseTitle}</div>
                 </div>
-                <div class="phase-card-desc">${phase.subtitle}</div>
+                <div class="phase-card-desc">${phaseSubtitle}</div>
                 <div class="phase-card-footer">
                     <div class="phase-stars">
                         ${[1,2,3].map(i => `<span class="star ${i <= phase.stars ? 'earned' : ''}">★</span>`).join('')}
@@ -107,12 +112,13 @@ const App = {
     updateDailyChallenge() {
         const today = new Date().toDateString();
         const card = document.getElementById('daily-challenge');
+        const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
 
         if (this.lastDailyDate === today && this.dailyCompleted) {
-            card.querySelector('h3').textContent = 'Dnevni Izazov - Dovršen!';
-            card.querySelector('p').textContent = 'Vrati se sutra za novi izazov!';
+            card.querySelector('h3').textContent = t('home.dailyDone');
+            card.querySelector('p').textContent = t('home.dailyDoneDesc');
             card.querySelector('button').disabled = true;
-            card.querySelector('button').textContent = '✓ Gotovo';
+            card.querySelector('button span').textContent = t('home.done');
             card.style.opacity = '0.7';
         }
     },
@@ -132,18 +138,21 @@ const App = {
             return;
         }
 
-        document.getElementById('phase-header-title').textContent = phase.title;
+        const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
+        const pd = (key) => t(`phaseData.${index + 1}.${key}`);
+
+        document.getElementById('phase-header-title').textContent = pd('title') || phase.title;
         document.getElementById('phase-icon').textContent = phase.icon;
-        document.getElementById('phase-title').textContent = phase.title;
-        document.getElementById('phase-subtitle').textContent = phase.subtitle;
-        document.getElementById('phase-idea').textContent = phase.idea;
-        document.getElementById('phase-mantra').textContent = phase.mantra;
-        document.getElementById('phase-parent-tip').textContent = phase.parentTip;
+        document.getElementById('phase-title').textContent = pd('title') || phase.title;
+        document.getElementById('phase-subtitle').textContent = pd('subtitle') || phase.subtitle;
+        document.getElementById('phase-idea').textContent = pd('idea') || phase.idea;
+        document.getElementById('phase-mantra').textContent = pd('mantra') || phase.mantra;
+        document.getElementById('phase-parent-tip').textContent = pd('parentTip') || phase.parentTip;
 
         const progress = Math.min(100, (phase.completed / phase.total) * 100);
         document.getElementById('phase-progress-bar').style.width = `${progress}%`;
         document.getElementById('phase-progress-text').textContent =
-            `${phase.completed} / ${phase.total} zadataka riješeno`;
+            `${phase.completed} / ${phase.total} ${t('phase.progress')}`;
 
         this.showScreen('phase');
     },

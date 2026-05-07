@@ -130,12 +130,15 @@ Object.assign(App, {
                 document.getElementById('app').appendChild(popup);
             }
 
+            const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
+            const pd = (key) => t(`phaseData.${phaseIndex + 1}.${key}`);
+
             document.getElementById('phase-unlock-icon').textContent = phase.icon;
-            document.getElementById('phase-unlock-title').textContent = 'Novi svijet otključan! 🎉';
-            document.getElementById('phase-unlock-text').textContent = `Otključao/la si svijet "${phase.title}"!`;
+            document.getElementById('phase-unlock-title').textContent = t('results.bravo').replace(/ 🎉$/, '') + '! 🎉';
+            document.getElementById('phase-unlock-text').textContent = `${pd('title') || phase.title}!`;
             document.getElementById('phase-unlock-badge').innerHTML = `
                 <span style="background:${phase.color};color:white;padding:0.3rem 1rem;border-radius:var(--radius-sm);font-weight:800;font-size:1.1rem;">
-                    ${phase.icon} ${phase.title}
+                    ${phase.icon} ${pd('title') || phase.title}
                 </span>
             `;
             this._unlockedPhaseIndex = phaseIndex;
@@ -159,6 +162,7 @@ Object.assign(App, {
     showReviewMistakes() {
         const container = document.getElementById('review-mistakes-list');
         container.innerHTML = '';
+        const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
         const mistakes = [];
         for (let i = 0; i < this.questions.length; i++) {
             const q = this.questions[i];
@@ -168,7 +172,7 @@ Object.assign(App, {
             }
         }
         if (mistakes.length === 0) {
-            container.innerHTML = '<p class="review-no-mistakes">Nema grešaka! Savršeno! 🎉</p>';
+            container.innerHTML = `<p class="review-no-mistakes">${t('results.noMistakes')}</p>`;
         } else {
             mistakes.forEach(m => {
                 const card = document.createElement('div');
@@ -178,10 +182,10 @@ Object.assign(App, {
                     ? m.question.display.replace(/<span class="blank">\?<\/span>/g, '___')
                     : '';
                 card.innerHTML = `
-                    <div class="mistake-header">Pitanje ${m.index + 1}</div>
+                    <div class="mistake-header">${t('quiz.question')} ${m.index + 1}</div>
                     <div class="mistake-display">${display}</div>
-                    <div class="mistake-row wrong"><span>Tvoj odgovor:</span> <strong>${userAns}</strong></div>
-                    <div class="mistake-row correct"><span>Točan odgovor:</span> <strong>${m.question.answer}</strong></div>
+                    <div class="mistake-row wrong"><span>${t('results.yourAnswer')}</span> <strong>${userAns}</strong></div>
+                    <div class="mistake-row correct"><span>${t('results.correctAnswer')}</span> <strong>${m.question.answer}</strong></div>
                     <div class="mistake-explanation">${m.question.explanation}</div>
                 `;
                 container.appendChild(card);

@@ -3,7 +3,9 @@
         "title": "Calcolo Mentale",
         "subtitle": "Imparare Giocando",
         "tagline": "Per bambini e genitori",
-        "footer": "10-15 minuti al giorno • Senza pressione • Finisci sempre con una vittoria"
+        "footer": "10-15 minuti al giorno • Senza pressione • Finisci sempre con una vittoria",
+        "splashQuote1": "Prima fai un numero bello,",
+        "splashQuote2": "poi aggiusta."
     },
     "nav": {
         "back": "Indietro",
@@ -110,7 +112,19 @@
         "aboutText": "Calcolo Mentale è un gioco educativo per bambini. Insegna il calcolo mentale attraverso 12 fasi, dall'addizione alla moltiplicazione vicino al 10.",
         "credits": "Autore: David Bekić-Skeji | 2025",
         "readAloud": "Leggi le domande ad alta voce",
-        "parentDashboard": "Dashboard Genitori"
+        "parentDashboard": "Dashboard Genitori",
+        "soundAndAudio": "Suono e audio",
+        "appearance": "Aspetto",
+        "progressSection": "Progresso",
+        "data": "Dati",
+        "resetAllProgress": "Resetta tutto il progresso",
+        "deleteAllProgress": "Cancella tutto il progresso",
+        "exportProgress": "Esporta progresso",
+        "selectLanguage": "Seleziona lingua",
+        "sounds": "Suoni",
+        "darkModeToggle": "Modalità Scura",
+        "version": "Calcolo Mentale v1.0",
+        "educationalGame": "Gioco educativo per bambini"
     },
     "achievement": {
         "streak": "Serie di Fuoco! 🔥",
@@ -129,6 +143,109 @@
         "10": "Condividere le Cose",
         "11": "Divisione come Moltiplicazione Inversa",
         "12": "Trucchi di Calcolo Veloce"
+    },
+    "phaseData": {
+        "1": {
+            "title": "Amici del Numero 10",
+            "subtitle": "Impara quali numeri fanno 10",
+            "idea": "Il numero 10 è il primo grande 'numero bello'. Se sai quali combinazioni fanno 10, addizionare, sottrarre, moltiplicare e dividere sarà molto più facile.",
+            "mantra": "I numeri hanno amici. Quando due amici si uniscono, otteniamo il numero bello 10.",
+            "parentTip": "Usa mattoncini Lego, caramelle, sassolini o dita. Se il bambino indovina, torna agli oggetti fisici."
+        },
+        "2": {
+            "title": "Addizione a Una Cifra",
+            "subtitle": "Somma senza contare da 1",
+            "idea": "Tieni il numero più grande in testa e aggiungi il più piccolo. Non devi contare ogni volta dall'inizio.",
+            "mantra": "Tieni il numero più grande, aggiungi il più piccolo.",
+            "parentTip": "Chiedi: 'Cos'è più facile: contare tutto dall'inizio o tenere il numero più grande in testa?'"
+        },
+        "3": {
+            "title": "Addizione Oltre il 10",
+            "subtitle": "Fai 10, poi continua",
+            "idea": "Quando un numero è vicino a 10, aiutalo a diventare 10. Allora il calcolo è più facile.",
+            "mantra": "Arriva a 10, poi continua.",
+            "parentTip": "Domanda importante: 'Come lo sapevi?' Il bambino deve poter dire: 'Ho fatto 10.'"
+        },
+        "4": {
+            "title": "Sottrazione di Base",
+            "subtitle": "Togli una parte, guarda cosa resta",
+            "idea": "Sottrarre significa: ho qualcosa, tolgo una parte, vedo quanto resta.",
+            "mantra": "Togli una parte, guarda cosa resta.",
+            "parentTip": "Metti dei blocchi sul tavolo, togline alcuni, chiedi quanti ne restano. Collega con l'addizione: se 6 + 4 = 10, allora 10 - 6 = 4."
+        },
+        "5": {
+            "title": "Sottrazione come Distanza",
+            "subtitle": "Salta a 10, poi all'obiettivo",
+            "idea": "A volte non dobbiamo spostare nulla. Guardiamo solo quanto un numero è lontano dall'altro.",
+            "mantra": "Salta a 10, poi all'obiettivo.",
+            "parentTip": "Per 13 - 8: 'Quanto è lontano dall'8 al 13?' Da 8 a 10 sono 2, da 10 a 13 sono 3, totale 5."
+        },
+        "6": {
+            "title": "Addizione a Due Cifre",
+            "subtitle": "Prima le decine, poi le unità",
+            "idea": "Un numero a due cifre ha una parte grande (decine) e una parte piccola (unità). Prima combiniamo le parti grandi, poi le piccole.",
+            "mantra": "Prima le decine, poi le unità.",
+            "parentTip": "Per 42 + 35: prima 40 + 30 = 70, poi 2 + 5 = 7, totale 77. Per il cervello è più naturale sapere prima approssimativamente dove si trova la risposta."
+        },
+        "7": {
+            "title": "Addizione per Arrotondamento",
+            "subtitle": "Dai un po' a un numero per renderlo bello",
+            "idea": "Trasforma un numero in un numero bello (20, 30, 40, 50) e adatta l'altro. Non è imbrogliare, è calcolare in modo intelligente!",
+            "mantra": "Dai un po' a un numero per renderlo bello.",
+            "parentTip": "Per 29 + 16: 29 ha bisogno di 1 per arrivare a 30. Prendiamo 1 da 16, resta 15. 30 + 15 = 45. Questo insegna al bambino a vedere i numeri come flessibili."
+        },
+        "8": {
+            "title": "Moltiplicazione come Gruppi",
+            "subtitle": "Gruppi uguali",
+            "idea": "La moltiplicazione non è una tabella da memorizzare. La moltiplicazione significa: più gruppi uguali.",
+            "mantra": "La moltiplicazione sono gruppi uguali.",
+            "parentTip": "Usa piatti e biscotti. 'Se abbiamo 3 piatti e 4 biscotti su ogni piatto, quanti biscotti abbiamo?'"
+        },
+        "9": {
+            "title": "Doppio, Metà, ×5 e ×10",
+            "subtitle": "Moltiplicazione intelligente",
+            "idea": "Alcune tabelline non devono essere memorizzate. Si possono capire raddoppiando, dimezzando e usando le decine.",
+            "mantra": "×2 è il doppio. ×4 è doppio-doppio. ×5 è la metà di ×10. ×10 è facile.",
+            "parentTip": "Per 7 × 5: prima 7 × 10 = 70, poi la metà di 70 è 35. Il bambino vede che la moltiplicazione non è magia."
+        },
+        "10": {
+            "title": "Condividere le Cose",
+            "subtitle": "Condividi in modo equo",
+            "idea": "Dividere significa: abbiamo qualcosa e la condividiamo in modo equo. Tutti ricevono la stessa quantità.",
+            "mantra": "Condividi in modo equo.",
+            "parentTip": "Metti 12 blocchi e 3 piatti. Il bambino posiziona i blocchi uno alla volta finché tutti i piatti non hanno la stessa quantità."
+        },
+        "11": {
+            "title": "Divisione come Moltiplicazione Inversa",
+            "subtitle": "Se conosco la moltiplicazione, conosco la divisione",
+            "idea": "Divisione e moltiplicazione sono collegate. Una famiglia di numeri dà 4 calcoli.",
+            "mantra": "Se conosco la moltiplicazione, conosco la divisione.",
+            "parentTip": "Famiglia di numeri: 3, 4, 12. Da loro: 3×4=12, 4×3=12, 12÷3=4, 12÷4=3. Questo sviluppa una comprensione profonda."
+        },
+        "12": {
+            "title": "Trucchi di Calcolo Veloce",
+            "subtitle": "Moltiplicazione vicino a 10",
+            "idea": "Quando moltiplichiamo numeri vicini a 10, chiediamo: 'Quanto manca per arrivare a 10?' Sottraiamo incrociando e moltiplichiamo i numeri piccoli.",
+            "mantra": "Quanto manca per 10? Sottrai incrociando. Moltiplica i numeri piccoli.",
+            "parentTip": "NON insegnare questo troppo presto! Il bambino deve prima capire 'quanto manca per 10'. Per 8×9: 8 ha bisogno di 2, 9 ha bisogno di 1. 8-1=7, 2×1=2. Risposta: 72."
+        }
+    },
+    "dashboard": {
+        "title": "Dashboard Genitori",
+        "totalStars": "Stelle totali",
+        "totalCompleted": "Compiti completati",
+        "bestStreak": "Miglior serie",
+        "phasesUnlocked": "Mondi sbloccati",
+        "phaseProgress": "Progresso per fase",
+        "progressOverTime": "Progresso nel tempo",
+        "weakAreas": "Aree deboli",
+        "weakSuggestion": "Esercitati di più!",
+        "allGood": "Ogni fase aperta ha 2+ stelle! 🎉",
+        "noData": "Ci saranno dati sufficienti dopo alcuni giorni di gioco."
+    },
+    "info": {
+        "ok": "OK",
+        "cancel": "Annulla"
     },
     "days": ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"],
     "months": ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"]

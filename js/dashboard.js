@@ -12,6 +12,7 @@ Object.assign(App, {
         let totalCompleted = 0;
         let phasesUnlocked = 0;
         let bestStreak = 0;
+        const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
 
         PHASES.forEach(phase => {
             totalStars += phase.stars;
@@ -37,15 +38,17 @@ Object.assign(App, {
     renderDashboardPhases() {
         const container = document.getElementById('dashboard-phases');
         container.innerHTML = '';
+        const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
 
         PHASES.forEach((phase, i) => {
             const pct = Math.min(100, (phase.completed / phase.total) * 100);
+            const pd = (key) => t(`phaseData.${i + 1}.${key}`);
             const row = document.createElement('div');
             row.className = 'dashboard-phase-row';
             row.innerHTML = `
                 <div class="dashboard-phase-icon">${phase.icon}</div>
                 <div class="dashboard-phase-info">
-                    <div class="dashboard-phase-name">${phase.title}</div>
+                    <div class="dashboard-phase-name">${pd('title') || phase.title}</div>
                     <div class="dashboard-phase-bar">
                         <div class="dashboard-phase-fill" style="width:${pct}%;background:${phase.color};"></div>
                     </div>
@@ -74,10 +77,11 @@ Object.assign(App, {
         } catch(e) {}
 
         if (history.length < 2) {
+            const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
             ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--color-text-light').trim();
             ctx.font = '24px Nunito, sans-serif';
             ctx.textAlign = 'center';
-            ctx.fillText('Dovoljno podataka će biti nakon nekoliko dana igranja.', w / 2, h / 2);
+            ctx.fillText(t('dashboard.noData'), w / 2, h / 2);
             return;
         }
 
@@ -113,6 +117,8 @@ Object.assign(App, {
         const container = document.getElementById('dashboard-weak-areas');
         container.innerHTML = '';
 
+        const t = (key) => typeof I18n !== 'undefined' ? I18n.t(key) : key;
+
         const weak = PHASES
             .filter(p => p.unlocked && p.completed > 0)
             .filter(p => p.stars < 2)
@@ -120,18 +126,20 @@ Object.assign(App, {
             .slice(0, 3);
 
         if (weak.length === 0) {
-            container.innerHTML = '<p style="color:var(--color-success);text-align:center;padding:1rem;">Svaka otvorena faza ima 2+ zvjezdice! 🎉</p>';
+            container.innerHTML = `<p style="color:var(--color-success);text-align:center;padding:1rem;">${t('dashboard.allGood')}</p>`;
             return;
         }
 
         weak.forEach(phase => {
+            const i = PHASES.indexOf(phase);
+            const pd = (key) => t(`phaseData.${i + 1}.${key}`);
             const item = document.createElement('div');
             item.className = 'dashboard-weak-item';
             item.innerHTML = `
                 <span>${phase.icon}</span>
                 <div>
-                    <div class="phase-name">${phase.title}</div>
-                    <div class="suggestion">${phase.completed}/${phase.total} · ${'★'.repeat(phase.stars)}${'☆'.repeat(3 - phase.stars)} · Vježbaj više!</div>
+                    <div class="phase-name">${pd('title') || phase.title}</div>
+                    <div class="suggestion">${phase.completed}/${phase.total} · ${'★'.repeat(phase.stars)}${'☆'.repeat(3 - phase.stars)} · ${t('dashboard.weakSuggestion')}</div>
                 </div>
             `;
             container.appendChild(item);

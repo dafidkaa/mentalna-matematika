@@ -3,7 +3,9 @@
         "title": "Mental Math",
         "subtitle": "Learning Through Play",
         "tagline": "For kids and parents",
-        "footer": "10-15 minutes daily • No pressure • Always end with a win"
+        "footer": "10-15 minutes daily • No pressure • Always end with a win",
+        "splashQuote1": "First make a nice number,",
+        "splashQuote2": "then adjust."
     },
     "nav": {
         "back": "Back",
@@ -110,7 +112,19 @@
         "aboutText": "Mental Math is an educational game for kids. It teaches mental calculation through 12 phases, from addition to multiplication near 10.",
         "credits": "Author: David Bekić-Skeji | 2025",
         "readAloud": "Read questions aloud",
-        "parentDashboard": "Parent Dashboard"
+        "parentDashboard": "Parent Dashboard",
+        "soundAndAudio": "Sound & Audio",
+        "appearance": "Appearance",
+        "progressSection": "Progress",
+        "data": "Data",
+        "resetAllProgress": "Reset all progress",
+        "deleteAllProgress": "Delete all progress",
+        "exportProgress": "Export progress",
+        "selectLanguage": "Select language",
+        "sounds": "Sounds",
+        "darkModeToggle": "Dark Mode",
+        "version": "Mental Math v1.0",
+        "educationalGame": "Educational game for kids"
     },
     "achievement": {
         "streak": "Fire Streak! 🔥",
@@ -129,6 +143,109 @@
         "10": "Sharing Things",
         "11": "Division as Inverse Multiplication",
         "12": "Speed Math Tricks"
+    },
+    "phaseData": {
+        "1": {
+            "title": "Friends of Number 10",
+            "subtitle": "Learn which numbers make 10",
+            "idea": "The number 10 is the first big 'nice number'. If you know which combinations make 10, adding, subtracting, multiplying and dividing become much easier.",
+            "mantra": "Numbers have friends. When two friends come together, we get the nice number 10.",
+            "parentTip": "Use Lego bricks, candies, pebbles or fingers. If the child is guessing, go back to physical objects."
+        },
+        "2": {
+            "title": "Single-Digit Addition",
+            "subtitle": "Add without counting from 1",
+            "idea": "Keep the bigger number in your head and add the smaller one. You don't need to count from the beginning every time.",
+            "mantra": "Keep the bigger number, add the smaller one.",
+            "parentTip": "Ask: 'What's easier: counting everything from the start or keeping the bigger number in your head?'"
+        },
+        "3": {
+            "title": "Addition Beyond 10",
+            "subtitle": "Make 10, then continue",
+            "idea": "When a number is close to 10, help it become 10. Then the calculation is easier.",
+            "mantra": "Get to 10, then continue.",
+            "parentTip": "Important question: 'How did you know that?' The child should be able to say: 'I made 10.'"
+        },
+        "4": {
+            "title": "Basic Subtraction",
+            "subtitle": "Take away a part, see what's left",
+            "idea": "Subtraction means: I have something, I take away a part, I see how much is left.",
+            "mantra": "Take away a part, see what's left.",
+            "parentTip": "Put blocks on the table, remove some, ask how many are left. Connect to addition: if 6 + 4 = 10, then 10 - 6 = 4."
+        },
+        "5": {
+            "title": "Subtraction as Distance",
+            "subtitle": "Jump to 10, then to the goal",
+            "idea": "Sometimes we don't need to move anything. We just look at how far one number is from another.",
+            "mantra": "Jump to 10, then to the goal.",
+            "parentTip": "For 13 - 8: 'How far is it from 8 to 13?' 8 to 10 is 2, 10 to 13 is 3, total 5."
+        },
+        "6": {
+            "title": "Two-Digit Addition",
+            "subtitle": "Tens first, then ones",
+            "idea": "A two-digit number has a big part (tens) and a small part (ones). First combine the big parts, then the small ones.",
+            "mantra": "Tens first, then ones.",
+            "parentTip": "For 42 + 35: first 40 + 30 = 70, then 2 + 5 = 7, total 77. It's more natural for the brain to first know roughly where the answer is."
+        },
+        "7": {
+            "title": "Addition by Rounding",
+            "subtitle": "Give a little to one number to make it nice",
+            "idea": "Turn one number into a nice number (20, 30, 40, 50), and adjust the other. It's not cheating, it's smart calculating!",
+            "mantra": "Give a little to one number to make it nice.",
+            "parentTip": "For 29 + 16: 29 needs 1 to reach 30. Take 1 from 16, leaving 15. 30 + 15 = 45. This teaches the child to see numbers as flexible."
+        },
+        "8": {
+            "title": "Multiplication as Groups",
+            "subtitle": "Equal groups",
+            "idea": "Multiplication is not a table to memorize. Multiplication means: multiple equal groups.",
+            "mantra": "Multiplication is equal groups.",
+            "parentTip": "Use plates and cookies. 'If we have 3 plates and 4 cookies on each plate, how many cookies do we have?'"
+        },
+        "9": {
+            "title": "Double, Half, ×5 and ×10",
+            "subtitle": "Smart multiplication",
+            "idea": "Some tables don't need to be memorized. They can be understood through doubling, halving and tens.",
+            "mantra": "×2 is double. ×4 is double-double. ×5 is half of ×10. ×10 is easy.",
+            "parentTip": "For 7 × 5: first 7 × 10 = 70, then half of 70 is 35. The child sees that multiplication isn't magic."
+        },
+        "10": {
+            "title": "Sharing Things",
+            "subtitle": "Share fairly",
+            "idea": "Division means: we have something and we share it fairly. Everyone gets the same amount.",
+            "mantra": "Share fairly.",
+            "parentTip": "Put 12 blocks and 3 plates. The child places blocks one by one until all plates have the same amount."
+        },
+        "11": {
+            "title": "Division as Inverse Multiplication",
+            "subtitle": "If I know multiplication, I know division",
+            "idea": "Division and multiplication are connected. One number family gives 4 calculations.",
+            "mantra": "If I know multiplication, I know division.",
+            "parentTip": "Number family: 3, 4, 12. From them: 3×4=12, 4×3=12, 12÷3=4, 12÷4=3. This develops deep understanding."
+        },
+        "12": {
+            "title": "Speed Math Tricks",
+            "subtitle": "Multiplication near 10",
+            "idea": "When multiplying numbers close to 10, we ask: 'How far from 10?' Subtract crosswise, multiply the small numbers.",
+            "mantra": "How far from 10? Subtract crosswise. Multiply the small numbers.",
+            "parentTip": "DON'T teach this too early! The child must first understand 'how far from 10'. For 8×9: 8 needs 2, 9 needs 1. 8-1=7, 2×1=2. Answer: 72."
+        }
+    },
+    "dashboard": {
+        "title": "Parent Dashboard",
+        "totalStars": "Total stars",
+        "totalCompleted": "Tasks completed",
+        "bestStreak": "Best streak",
+        "phasesUnlocked": "Worlds unlocked",
+        "phaseProgress": "Progress by phase",
+        "progressOverTime": "Progress over time",
+        "weakAreas": "Weak areas",
+        "weakSuggestion": "Practice more!",
+        "allGood": "Every open phase has 2+ stars! 🎉",
+        "noData": "Enough data will be available after a few days of playing."
+    },
+    "info": {
+        "ok": "OK",
+        "cancel": "Cancel"
     },
     "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]

@@ -3,7 +3,9 @@
         "title": "Kopfrechnen",
         "subtitle": "Lernen durch Spielen",
         "tagline": "Für Kinder und Eltern",
-        "footer": "10-15 Minuten täglich • Kein Druck • Immer mit einem Erfolg beenden"
+        "footer": "10-15 Minuten täglich • Kein Druck • Immer mit einem Erfolg beenden",
+        "splashQuote1": "Mach erst eine schöne Zahl,",
+        "splashQuote2": "dann korrigiere."
     },
     "nav": {
         "back": "Zurück",
@@ -110,7 +112,19 @@
         "aboutText": "Kopfrechnen ist ein Lernspiel für Kinder. Es lehnt Kopfrechnen in 12 Phasen, von Addition bis Multiplikation nahe 10.",
         "credits": "Autor: David Bekić-Skeji | 2025",
         "readAloud": "Fragen vorlesen",
-        "parentDashboard": "Eltern-Dashboard"
+        "parentDashboard": "Eltern-Dashboard",
+        "soundAndAudio": "Ton & Audio",
+        "appearance": "Erscheinungsbild",
+        "progressSection": "Fortschritt",
+        "data": "Daten",
+        "resetAllProgress": "Gesamten Fortschritt zurücksetzen",
+        "deleteAllProgress": "Gesamten Fortschritt löschen",
+        "exportProgress": "Fortschritt exportieren",
+        "selectLanguage": "Sprache wählen",
+        "sounds": "Töne",
+        "darkModeToggle": "Dunkler Modus",
+        "version": "Kopfrechnen v1.0",
+        "educationalGame": "Lernspiel für Kinder"
     },
     "achievement": {
         "streak": "Feuerstrahl! 🔥",
@@ -129,6 +143,109 @@
         "10": "Dinge teilen",
         "11": "Division als umgekehrte Multiplikation",
         "12": "Schnellrechen-Tricks"
+    },
+    "phaseData": {
+        "1": {
+            "title": "Freunde der Zahl 10",
+            "subtitle": "Lerne, welche Zahlen 10 ergeben",
+            "idea": "Die Zahl 10 ist die erste große 'schöne Zahl'. Wenn du weißt, welche Kombinationen 10 ergeben, wird Addieren, Subtrahieren, Multiplizieren und Dividieren viel einfacher.",
+            "mantra": "Zahlen haben Freunde. Wenn sich zwei Freunde verbinden, erhalten wir die schöne Zahl 10.",
+            "parentTip": "Verwende Lego-Steine, Bonbons, Kieselsteine oder Finger. Wenn das Kind rät, gehe zurück zu Gegenständen."
+        },
+        "2": {
+            "title": "Einstellige Addition",
+            "subtitle": "Addieren ohne von 1 zu zählen",
+            "idea": "Behalte die größere Zahl im Kopf und füge die kleinere hinzu. Du musst nicht jedes Mal von Anfang an zählen.",
+            "mantra": "Behalte die größere Zahl, füge die kleinere hinzu.",
+            "parentTip": "Frag: 'Was ist einfacher: alles von Anfang an zählen oder die größere Zahl im Kopf behalten?'"
+        },
+        "3": {
+            "title": "Addition über 10",
+            "subtitle": "Mach 10, dann weiter",
+            "idea": "Wenn eine Zahl nahe an 10 ist, hilf ihr, 10 zu werden. Dann ist die Rechnung einfacher.",
+            "mantra": "Komm zu 10, dann weiter.",
+            "parentTip": "Wichtige Frage: 'Wie wusstest du das?' Das Kind sollte sagen können: 'Ich habe 10 gemacht.'"
+        },
+        "4": {
+            "title": "Grundlegende Subtraktion",
+            "subtitle": "Nimm einen Teil weg, sieh was übrig bleibt",
+            "idea": "Subtraktion bedeutet: Ich habe etwas, nehme einen Teil weg und sehe, wie viel übrig bleibt.",
+            "mantra": "Nimm einen Teil weg, sieh was übrig bleibt.",
+            "parentTip": "Stelle Blöcke auf den Tisch, nimm einige weg und frage, wie viele übrig sind. Verbinde mit Addition: Wenn 6 + 4 = 10, dann ist 10 - 6 = 4."
+        },
+        "5": {
+            "title": "Subtraktion als Abstand",
+            "subtitle": "Spring zu 10, dann zum Ziel",
+            "idea": "Manchmal müssen wir nichts bewegen. Wir schauen nur, wie weit eine Zahl von der anderen entfernt ist.",
+            "mantra": "Spring zu 10, dann zum Ziel.",
+            "parentTip": "Für 13 - 8: 'Wie weit ist es von 8 bis 13?' 8 bis 10 sind 2, 10 bis 13 sind 3, insgesamt 5."
+        },
+        "6": {
+            "title": "Zweistellige Addition",
+            "subtitle": "Zuerst die Zehner, dann die Einer",
+            "idea": "Eine zweistellige Zahl hat einen großen Teil (Zehner) und einen kleinen Teil (Einer). Zuerst verbinden wir die großen Teile, dann die kleinen.",
+            "mantra": "Zuerst die Zehner, dann die Einer.",
+            "parentTip": "Für 42 + 35: zuerst 40 + 30 = 70, dann 2 + 5 = 7, insgesamt 77. Für das Gehirn ist es natürlicher, zuerst ungefähr zu wissen, wo die Antwort liegt."
+        },
+        "7": {
+            "title": "Addition durch Runden",
+            "subtitle": "Gib einer Zahl etwas, damit sie schön wird",
+            "idea": "Verwandle eine Zahl in eine schöne Zahl (20, 30, 40, 50) und passe die andere an. Das ist kein Betrug, das ist schlues Rechnen!",
+            "mantra": "Gib einer Zahl etwas, damit sie schön wird.",
+            "parentTip": "Für 29 + 16: 29 braucht 1 bis 30. Wir nehmen 1 von 16, es bleibt 15. 30 + 15 = 45. Das lehrt das Kind, Zahlen als flexibel zu sehen."
+        },
+        "8": {
+            "title": "Multiplikation als Gruppen",
+            "subtitle": "Gleiche Gruppen",
+            "idea": "Multiplikation ist keine Tabelle zum Auswendiglernen. Multiplikation bedeutet: mehrere gleiche Gruppen.",
+            "mantra": "Multiplikation ist gleiche Gruppen.",
+            "parentTip": "Verwende Teller und Kekse. 'Wenn wir 3 Teller haben und auf jedem Teller 4 Kekse liegen, wie viele Kekse haben wir?'"
+        },
+        "9": {
+            "title": "Das Doppelte, die Hälfte, ×5 und ×10",
+            "subtitle": "Schlaue Multiplikation",
+            "idea": "Manche Einmaleins-Reihen muss man nicht auswendig lernen. Man kann sie durch Verdoppeln, Halbieren und Zehner verstehen.",
+            "mantra": "×2 ist das Doppelte. ×4 ist doppelt-doppelt. ×5 ist die Hälfte von ×10. ×10 ist einfach.",
+            "parentTip": "Für 7 × 5: zuerst 7 × 10 = 70, dann die Hälfte von 70 ist 35. Das Kind sieht, dass Multiplikation keine Magie ist."
+        },
+        "10": {
+            "title": "Dinge teilen",
+            "subtitle": "Teile gerecht",
+            "idea": "Division bedeutet: Wir haben etwas und teilen es gerecht auf. Alle bekommen gleich viel.",
+            "mantra": "Teile gerecht.",
+            "parentTip": "Lege 12 Blöcke und 3 Teller hin. Das Kind legt Blöcke einen nach dem anderen, bis alle Teller gleich viel haben."
+        },
+        "11": {
+            "title": "Division als umgekehrte Multiplikation",
+            "subtitle": "Wenn ich Multiplikation kenne, kenne ich auch Division",
+            "idea": "Division und Multiplikation sind verbunden. Eine Zahlenfamilie ergibt 4 Rechnungen.",
+            "mantra": "Wenn ich Multiplikation kenne, kenne ich auch Division.",
+            "parentTip": "Zahlenfamilie: 3, 4, 12. Daraus: 3×4=12, 4×3=12, 12÷3=4, 12÷4=3. Das entwickelt ein tiefes Verständnis."
+        },
+        "12": {
+            "title": "Schnellrechen-Tricks",
+            "subtitle": "Multiplikation nahe 10",
+            "idea": "Wenn wir Zahlen nahe 10 multiplizieren, fragen wir: 'Wie weit bis 10?' Wir subtrahieren über Kreuz und multiplizieren die kleinen Zahlen.",
+            "mantra": "Wie weit bis 10? Subtrahiere über Kreuz. Multipliziere die kleinen Zahlen.",
+            "parentTip": "NICHT zu früh lehren! Das Kind muss zuerst verstehen, 'wie weit bis 10'. Für 8×9: 8 braucht 2, 9 braucht 1. 8-1=7, 2×1=2. Antwort: 72."
+        }
+    },
+    "dashboard": {
+        "title": "Eltern-Dashboard",
+        "totalStars": "Gesamtsterne",
+        "totalCompleted": "Aufgaben gelöst",
+        "bestStreak": "Beste Serie",
+        "phasesUnlocked": "Welten freigeschaltet",
+        "phaseProgress": "Fortschritt nach Phasen",
+        "progressOverTime": "Fortschritt im Laufe der Zeit",
+        "weakAreas": "Schwache Bereiche",
+        "weakSuggestion": "Übe mehr!",
+        "allGood": "Jede offene Phase hat 2+ Sterne! 🎉",
+        "noData": "Nach einigen Tagen Spielen werden genug Daten verfügbar sein."
+    },
+    "info": {
+        "ok": "OK",
+        "cancel": "Abbrechen"
     },
     "days": ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
     "months": ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]

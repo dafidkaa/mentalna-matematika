@@ -3,7 +3,9 @@
         "title": "Számtani Fejben",
         "subtitle": "Tanulás Játékkal",
         "tagline": "Gyerekeknek és szülőknek",
-        "footer": "Naponta 10-15 perc • Nyomás nélkül • Mindig sikerrel zárul"
+        "footer": "Naponta 10-15 perc • Nyomás nélkül • Mindig sikerrel zárul",
+        "splashQuote1": "Először csinálj szép számot,",
+        "splashQuote2": "azután igazítsd ki."
     },
     "nav": {
         "back": "Vissza",
@@ -110,7 +112,19 @@
         "aboutText": "A Számtani Fejben egy oktatási játék gyerekeknek. Fejben számolást tanít 12 fázison keresztül, az összeadástól a 10 körüli szorzásig.",
         "credits": "Szerző: David Bekić-Skeji | 2025",
         "readAloud": "Kérdések felolvasása",
-        "parentDashboard": "Szülői vezérlőpult"
+        "parentDashboard": "Szülői vezérlőpult",
+        "soundAndAudio": "Hang és audio",
+        "appearance": "Megjelenés",
+        "progressSection": "Előrehaladás",
+        "data": "Adatok",
+        "resetAllProgress": "Összes előrehaladás törlése",
+        "deleteAllProgress": "Összes előrehaladás törlése",
+        "exportProgress": "Előrehaladás exportálása",
+        "selectLanguage": "Nyelv kiválasztása",
+        "sounds": "Hangok",
+        "darkModeToggle": "Sötét mód",
+        "version": "Számtani Fejben v1.0",
+        "educationalGame": "Oktatási játék gyerekeknek"
     },
     "achievement": {
         "streak": "Tűz-széria! 🔥",
@@ -129,6 +143,109 @@
         "10": "Dolgok Megosztása",
         "11": "Osztás Mint Fordított Szorzás",
         "12": "Gyorsszámlálási Trükkök"
+    },
+    "phaseData": {
+        "1": {
+            "title": "A 10 Barátai",
+            "subtitle": "Tanuld meg, mely számok adnak ki 10-et",
+            "idea": "A 10-es szám az első nagy 'szép szám'. Ha tudod, mely kombinációk adnak 10-et, az összeadás, kivonás, szorzás és osztás sokkal könnyebb lesz.",
+            "mantra": "A számoknak vannak barátaik. Amikor két barát találkozik, megkapjuk a szép 10-es számot.",
+            "parentTip": "Használj Lego kockákat, cukorkákat, kavicsokat vagy ujjakat. Ha a gyerek találgat, térj vissza a tárgyakhoz."
+        },
+        "2": {
+            "title": "Egyjegyű Összeadás",
+            "subtitle": "Adj össze 1-től való számolás nélkül",
+            "idea": "Tartsd a nagyobb számot a fejedben és add hozzá a kisebbet. Nem kell minden alkalommal az elejétől számolni.",
+            "mantra": "Tartsd a nagyobbat, add hozzá a kisebbet.",
+            "parentTip": "Kérdezd: 'Mi könnyebb: mindent az elejétől számolni vagy a nagyobb számot a fejedben tartani?'"
+        },
+        "3": {
+            "title": "Összeadás 10 Felett",
+            "subtitle": "Csinálj 10-et, aztán folytasd",
+            "idea": "Amikor egy szám közel van a 10-hez, segíts neki 10 lenni. Akkor a számolás könnyebb.",
+            "mantra": "Juss el 10-ig, aztán folytasd.",
+            "parentTip": "Fontos kérdés: 'Honnan tudtad?' A gyereknek tudnia mondani: 'Csináltam egy 10-et.'"
+        },
+        "4": {
+            "title": "Alapvető Kivonás",
+            "subtitle": "Vegyél el egy részt, nézd meg mi marad",
+            "idea": "Kivonás jelentése: van valamim, elveszek egy részt, meglátom mennyi marad.",
+            "mantra": "Vegyél el egy részt, nézd meg mi marad.",
+            "parentTip": "Tegyél kockákat az asztalra, vegyél el néhányat, kérdezd meg mennyi maradt. Kösd össze az összeadással: ha 6 + 4 = 10, akkor 10 - 6 = 4."
+        },
+        "5": {
+            "title": "Kivonás Mint Távolság",
+            "subtitle": "Ugorj 10-re, aztán a célhoz",
+            "idea": "Néha nem kell semmit mozgatni. Csak megnézzük, milyen messze van egyik szám a másiktól.",
+            "mantra": "Ugorj 10-re, aztán a célhoz.",
+            "parentTip": "13 - 8 esetén: 'Milyen messze van a 8-tól a 13-ig?' 8-tól 10-ig 2, 10-től 13-ig 3, összesen 5."
+        },
+        "6": {
+            "title": "Kétjegyű Összeadás",
+            "subtitle": "Először a tízesek, aztán az egyesek",
+            "idea": "Egy kétjegyű számnak van nagy része (tízesek) és kis része (egyesek). Először a nagy részeket kössük össze, aztán a kis részeket.",
+            "mantra": "Először a tízesek, aztán az egyesek.",
+            "parentTip": "42 + 35 esetén: először 40 + 30 = 70, aztán 2 + 5 = 7, összesen 77. Az agy számára természetesebb először nagyban tudni, hol van a válasz."
+        },
+        "7": {
+            "title": "Összeadás Kerekítéssel",
+            "subtitle": "Adj egy kicsit egyik számnak, hogy szép legyen",
+            "idea": "Alakítsd az egyik számot szép számmá (20, 30, 40, 50) és a másikat igazítsd hozzá. Ez nem csalás, ez okos számolás!",
+            "mantra": "Adj egy kicsit egyik számnak, hogy szép legyen.",
+            "parentTip": "29 + 16 esetén: a 29-nek 1 kell a 30-ig. Elveszünk 1-et a 16-ból, marad 15. 30 + 15 = 45. Ez megtanítja a gyereket, hogy a számokat rugalmasnak lássa."
+        },
+        "8": {
+            "title": "Szorzás Mint Csoportok",
+            "subtitle": "Egyenlő csoportok",
+            "idea": "A szorzás nem egy táblázat, amit fejből kell tanulni. A szorzás jelentése: több egyenlő csoport.",
+            "mantra": "A szorzás egyenlő csoportok.",
+            "parentTip": "Használj tányérokat és kekszet. 'Ha 3 tányérunk van és minden tányéron 4 keksz van, hány kekszünk van?'"
+        },
+        "9": {
+            "title": "Dupla, Fél, ×5 és ×10",
+            "subtitle": "Okos szorzás",
+            "idea": "Néhány szorzótáblát nem kell fejből tanulni. Megérthetők duplázással, felezéssel és tízesekkel.",
+            "mantra": "×2 a duplája. ×4 a dupla-dupla. ×5 a fele a ×10-nek. ×10 könnyű.",
+            "parentTip": "7 × 5 esetén: először 7 × 10 = 70, aztán a fele 70-nek 35. A gyerek látja, hogy a szorzás nem varázslat."
+        },
+        "10": {
+            "title": "Dolgok Megosztása",
+            "subtitle": "Osztozz igazságosan",
+            "idea": "Osztás jelentése: van valamink és igazságosan osztjuk el. Mindenki ugyanannyit kap.",
+            "mantra": "Osztozz igazságosan.",
+            "parentTip": "Tegyél 12 kockát és 3 tányért. A gyerek egyesével helyezi a kockákat, amíg minden tányéron ugyanannyi nem lesz."
+        },
+        "11": {
+            "title": "Osztás Mint Fordított Szorzás",
+            "subtitle": "Ha ismerem a szorzást, ismerem az osztást is",
+            "idea": "Az osztás és szorzás összekapcsolódnak. Egy számcsalád 4 számítást ad.",
+            "mantra": "Ha ismerem a szorzást, ismerem az osztást is.",
+            "parentTip": "Számcsalád: 3, 4, 12. Belőlük: 3×4=12, 4×3=12, 12÷3=4, 12÷4=3. Ez mély megértést fejleszt."
+        },
+        "12": {
+            "title": "Gyorsszámlálási Trükkök",
+            "subtitle": "Szorzás 10 körül",
+            "idea": "Amikor 10 körüli számokat szorzunk, megkérdezzük: 'Mennyi kell a 10-ig?' Keresztbe kivonunk és megszorozzuk a kis számokat.",
+            "mantra": "Mennyi kell a 10-ig? Vonj ki keresztbe. Szorozd meg a kis számokat.",
+            "parentTip": "NE tanítsd ezt túl korán! A gyereknek először meg kell értenie, 'mennyi kell a 10-ig'. 8×9 esetén: a 8-nak 2 kell, a 9-nek 1. 8-1=7, 2×1=2. Válasz: 72."
+        }
+    },
+    "dashboard": {
+        "title": "Szülői vezérlőpult",
+        "totalStars": "Összes csillag",
+        "totalCompleted": "Feladatok megoldva",
+        "bestStreak": "Legjobb sorozat",
+        "phasesUnlocked": "Feloldott világok",
+        "phaseProgress": "Előrehaladás fázisonként",
+        "progressOverTime": "Előrehaladás az idő múlásával",
+        "weakAreas": "Gyenge területek",
+        "weakSuggestion": "Gyakorolj többet!",
+        "allGood": "Minden nyitott fázisnak 2+ csillaga van! 🎉",
+        "noData": "Elegendő adat néhány napos játék után lesz elérhető."
+    },
+    "info": {
+        "ok": "OK",
+        "cancel": "Mégse"
     },
     "days": ["Vasárnap", "Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat"],
     "months": ["Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"]
